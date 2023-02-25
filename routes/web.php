@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\File;
+use App\Models\Ai_service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $content_ai = \App\Models\Content::all();
+    $content_ai = \App\Models\Ai_service::all();
 
     return view('index', [
         'content_ai' => $content_ai
@@ -25,11 +26,22 @@ Route::get('/', function () {
 });
 
 
-Route::get('contents/{content_ai}', function ($slug) {
+Route::get('contents/{ai_service:slug}', function (Ai_service $ai_service) {
 
 
     return view('content_ai', [
-        'content_ai' => \App\Models\Content::find($slug)
+        'content_ai' => $ai_service
     ]);
 
-})->where('content_ai', '[A-z_\-]+');
+});
+
+Route::get('categories/{category}', function (\App\Models\Category $category) {
+
+    return view('content_ai', [
+
+        'content_ai' => $category
+
+
+    ]);
+
+});

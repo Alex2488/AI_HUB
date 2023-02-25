@@ -43,13 +43,12 @@
                         <h1 class="title_text mb-30 text_effect_wrap c_slide_in_wrap1">
                                             <span class="c_slide_in_wrap2">
                                                 <span class="c_slide_in_wrap3">
-                                                    Welcome to Developer Coding Platform
+                                                    Вас вітає AI HUB
                                                 </span>
                                             </span>
                         </h1>
                         <p class="mb-50" data-aos="fade-up" data-aos-delay="200">
-                            Faff about only a quid blower I don't want no agro bleeding chim pot burke tosser cras nice
-                            one boot fanny.
+                            Каталог AI-сервисів: знайдіть найкращі інструменти зі штучним інтелектом для свого бізнесу українською.
                         </p>
                         <div class="btns_group ul_li" data-aos="fade-up" data-aos-delay="300">
                             <ul class="clearfix">
@@ -91,14 +90,14 @@
                 <h3 class="sub_title mb-15 c_slide_in_wrap1">
 								<span class="c_slide_in_wrap2">
 									<span class="c_slide_in_wrap3">
-										The most popular
+										Найбільш популярні
 									</span>
 								</span>
                 </h3>
                 <h2 class="title_text mb-0 c_slide_in_wrap1">
 								<span class="c_slide_in_wrap2">
 									<span class="c_slide_in_wrap3">
-										Artificial Intelligence
+										Сервіси з штучним інтелектом
 									</span>
 								</span>
                 </h2>
