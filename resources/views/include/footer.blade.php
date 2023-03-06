@@ -8,7 +8,7 @@
                     <div class="widget about_content pr-0">
                         <div class="brand_logo mb-30">
                             <a href="index.html" class="brand_link">
-                                <img src="assets/images/logo/logo_3.png" alt="logo_not_found">
+                                <img src="{{url('/')}}/assets/images/logo_ai_w.png" alt="logo_not_found">
                             </a>
                         </div>
                         <div class="copyright_text">

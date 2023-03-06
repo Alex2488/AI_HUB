@@ -32,3 +32,26 @@
 
 <!-- custom - jquery include -->
 <script src="{{url('/')}}/assets/js/custom.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script type="text/javascript">
+
+    $('.show_confirm').click(function(event) {
+        var form =  $(this).closest("form");
+        var name = $(this).data("title-service");
+        event.preventDefault();
+        swal({
+            title: `Ви впевнені, що хочете видалити сервіс ${name} ?`,
+            text: "Якщо ви видалите, запис зникне назавжди.",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    form.submit();
+                }
+            });
+    });
+
+</script>

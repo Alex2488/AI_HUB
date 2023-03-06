@@ -9,8 +9,8 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function ai_service () {
-        return $this -> hasMany(Ai_service::class);
+    public function service () {
+        return $this -> hasMany(Service::class);
 
     }
 }
