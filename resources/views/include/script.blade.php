@@ -33,15 +33,19 @@
 <!-- custom - jquery include -->
 <script src="{{url('/')}}/assets/js/custom.js"></script>
 
+<script src="{{url('/')}}//assets/js/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
 <script type="text/javascript">
 
-    $('.show_confirm').click(function(event) {
-        var form =  $(this).closest("form");
+    $('.show_confirm').click(function (event) {
+        var form = $(this).closest("form");
         var name = $(this).data("title-service");
+        debugger
         event.preventDefault();
         swal({
-            title: `Ви впевнені, що хочете видалити сервіс ${name} ?`,
+            title: `Ви впевнені, що хочете видалити ${name} ?`,
             text: "Якщо ви видалите, запис зникне назавжди.",
             icon: "warning",
             buttons: true,
@@ -54,4 +58,10 @@
             });
     });
 
+</script>
+
+<script>
+    $(function () {
+        bsCustomFileInput.init();
+    });
 </script>

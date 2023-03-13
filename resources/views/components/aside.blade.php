@@ -32,32 +32,16 @@
                 </div>
             </li>
 
-            <li>
-                <div class="blog_small">
-                    <a href="#!" class="item_image">
-                        <img src="assets/images/sidebar/blogs/img_3.jpg" alt="image_not_found">
-                    </a>
-                    <div class="item_content">
-                        <h4 class="item_title">
-                            <a href="#!">Fast App development</a>
-                        </h4>
-                        <span class="post_date">July 06, 2020</span>
-                    </div>
-                </div>
-            </li>
         </ul>
     </div>
 
     <div class="widget sidebar_category ul_li_block" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="widget_title mb-30">Categories</h3>
+        <h3 class="widget_title mb-30">Категорії</h3>
         <ul class="clearfix">
-            <li><a href="#!">Fashion <span>(24)</span></a></li>
-            <li><a href="#!">Food for thought <span>(09)</span></a></li>
-            <li><a href="#!">Gaming <span>(07)</span></a></li>
-            <li><a href="#!">Uncategorized <span>(02)</span></a></li>
-            <li><a href="#!">makro <span>(04)</span></a></li>
-            <li><a href="#!">Project Management <span>(07)</span></a></li>
-            <li><a href="#!">Wireframing <span>(05)</span></a></li>
+            @foreach ($categories as $category)
+                <li><a href="#!">{{$category->name}} <span>({{$category->count()}})</span></a></li>
+            @endforeach
+
         </ul>
     </div>
 

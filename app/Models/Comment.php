@@ -9,13 +9,20 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected  $fillable = [
+        'user_id',
+        'service_id',
+        'body',
+    ];
+
 
     public function service () {
-        return $this->belongsTo(Service::class);
+        return $this->belongsTo(Service::class, 'service_id');
     }
 
     public function author() {
         return $this->belongsTo(User::class, 'user_id');
     }
 }
+
+

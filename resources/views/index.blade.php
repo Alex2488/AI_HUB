@@ -99,14 +99,17 @@
             <div class="row mb-5">
 
                 @foreach ($services as $service)
+
+
+
                     <div class="col-lg-4 col-md-4 col-sm-12">
                         <div class="service_primary_2" data-aos="fade-up" data-aos-delay="700">
                             <div class="header-card">
                                 <div class="item_icon icon_image">
-                                    <img src="{{url('/')}}/assets/images/icons/services/icon_3.png"
+                                    <img src="{{ url('/') . Storage::url($service->logo) }}"
                                          alt="icon_not_found">
                                 </div>
-                                <h3 class="item_title">
+                                <h3 class="item_title mt-3">
                                     {{$service -> title}}
                                 </h3>
                             </div>

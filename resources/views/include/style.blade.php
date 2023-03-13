@@ -27,3 +27,5 @@
 
 <!-- custom - css include -->
 <link rel="stylesheet" type="text/css" href="{{url('/')}}/assets/css/style.css">
+
+

@@ -27,8 +27,8 @@
     </div>
 
 
-    {{--<div class="form_item dropdown">
-        <button class="dropdown-toggle"  type="button" id="category" data-toggle="dropdown"
+    <div class="form_item dropdown">
+        <button class="dropdown-toggle" type="button" id="category" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
             Категорія
         </button>
@@ -38,10 +38,11 @@
                 <li>Картинка</li>
             </ul>
         </div>
-    </div>--}}
+    </div>
 
     <div class="form_item">
-        <textarea name="excerpt" value="{{$dataService->excerpt}}" placeholder="Короткий опис -  до 140 символів"></textarea>
+        <textarea name="excerpt" value="{{$dataService->excerpt}}"
+                  placeholder="Короткий опис -  до 140 символів"></textarea>
     </div>
 
     <div class="form_item">
@@ -61,12 +62,14 @@
     <div class="form_item">
         <h6 class="ml-5">Основний функціонал</h6>
 
-        <textarea name="functionality_1" value="{{$dataService->functionality_1}}" placeholder="Перший пункт"></textarea>
+        <textarea name="functionality_1" value="{{$dataService->functionality_1}}"
+                  placeholder="Перший пункт"></textarea>
 
     </div>
     <div class="form_item">
 
-        <textarea name="functionality_2" value="{{$dataService->functionality_2}}" placeholder="Другий пункт"></textarea>
+        <textarea name="functionality_2" value="{{$dataService->functionality_2}}"
+                  placeholder="Другий пункт"></textarea>
     </div>
     <div class="form_item">
 
@@ -75,7 +78,8 @@
 
     <div class="form_item">
 
-        <textarea name="functionality_4" value="{{$dataService->functionality_4}}" placeholder="Четвертий пункт"></textarea>
+        <textarea name="functionality_4" value="{{$dataService->functionality_4}}"
+                  placeholder="Четвертий пункт"></textarea>
     </div>
 
     <div class="form_item">

@@ -54,12 +54,10 @@
                             </li>
 
                             <li class="menu_item_has_child">
-                                <a href="{{url('services')}}">AI сервіси</a>
+                                <a href="{{route('services')}}">AI сервіси</a>
                             </li>
 
-                            {{--                        <li class="menu_item_has_child">
-                                                        <a href="{{url('news')}}">Новини</a>
-                                                    </li>--}}
+
 
                             <li class="menu_item_has_child">
                                 <a href="{{url('blog')}}">Блог</a>
@@ -70,6 +68,20 @@
                                 <a href="{{url('about')}}">Про нас</a>
 
                             </li>
+
+
+
+{{--                            @if (auth()->user()->role === 1)--}}
+
+
+                            @if (auth()->user()?->role === 1)
+                            <li class="menu_item_has_child">
+                                <a href="{{route('show-services')}}">admin</a>
+
+                            </li>
+                            @endif
+
+{{--                            @endif--}}
                         </ul>
                     </nav>
                 </div>

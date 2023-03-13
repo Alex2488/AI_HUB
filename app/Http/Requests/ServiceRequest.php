@@ -23,10 +23,10 @@ class ServiceRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'slug' => 'required',
-            'logo_link' => 'required',
             'link_to_service' => 'required',
             'excerpt' => 'required',
+            'logo' => 'required|file',
+            'image' => 'required|file',
 
         ];
     }
@@ -35,8 +35,6 @@ class ServiceRequest extends FormRequest
     {
         return [
             'title.required' => "Найменування обов'язкове для заповнення",
-            'slug.required' => "URL строка обов'язкова для заповнення",
-            'logo_link.required' => "Посилання на лого обов'язкове для заповнення",
             'link_to_service.required' => "Посилання на сервіс обов'язкове для заповнення",
             'excerpt.required' => "Короткий опис обов'язковий для заповнення",
         ];

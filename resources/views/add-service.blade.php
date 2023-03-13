@@ -6,7 +6,6 @@
             <div class="breadcrumb_content text-center decrease_size" data-aos="fade-up" data-aos-delay="100">
                 <h1 class="page_title mb-30">
                     Додати сервіс
-
                 </h1>
                 <div class="breadcrumb_nav ul_li_center">
                     <ul class="clearfix">
@@ -50,53 +49,42 @@
                                     </ul>
                                 </div>
                             @endif
-
-                            {{-- <p class="mb-0">
-                                 Why I say old chap that is spiffing pukka, bamboozled wind up bugger buggered zonked hanky panky a blinding shot the little rotter, bubble and squeak vagabond cheeky bugger at public school pardon your bloke the BBC.
-                             </p>--}}
                         </div>
 
-                        <form action="{{url('/')}}/panel/add-service/submit-service" method="post">
+                        <form action="{{route('submit-service')}}" method="post" enctype="multipart/form-data">
 
                             @csrf
-
-
                             <div class="form_item">
                                 <input type="text" name="title" placeholder="Найменування сервісу">
                             </div>
-
-
                             <div class="form_item">
-                                <input type="text" name="slug" placeholder="URL строка">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="logo">
+                                        <label class="custom-file-label">Завантажити логотип</label>
+                                    </div>
                             </div>
-
-
-                            <div class="form_item">
-                                <input type="text" name="logo_link" placeholder="Посилання на лого">
-                            </div>
-
                             <div class="form_item">
                                 <input type="text" name="link_to_service"
                                        placeholder="Посилання на сервіс">
                             </div>
+                            <div class="form_item dropdown">
+                                <div class="input-group mb-3">
+                                    <select class="custom-select" name="category_id" id="inputGroupSelect01">
+                                        <option selected disabled> Категорія</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
 
-                            <div class="form_item">
-                                <input type="text" name="category_id" placeholder="ID категорії">
-                            </div>
-
-
-                            {{--<div class="form_item dropdown">
-                                <button class="dropdown-toggle"  type="button" id="category" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                    Категорія
-                                </button>
-                                <div class="dropdown-menu ul_li_block" aria-labelledby="category">
-                                    <ul class="clearfix">
-                                        <li>Текст</li>
-                                        <li>Картинка</li>
-                                    </ul>
+                                    </select>
                                 </div>
-                            </div>--}}
+                            </div>
+                            <div class="form_item">
+
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="image">
+                                    <label class="custom-file-label">Завантажити зображення</label>
+                                </div>
+                            </div>
 
                             <div class="form_item">
                                 <textarea name="excerpt" placeholder="Короткий опис -  до 140 символів"></textarea>

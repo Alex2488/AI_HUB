@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('slug')->unique();
             $table->string('title');
-            $table->string('logo_link');
+            $table->string('logo');
+            $table->string('image');
             $table->string('link_to_service');
             $table->foreignId('category_id');
             $table->text('excerpt');
