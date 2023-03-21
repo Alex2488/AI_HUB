@@ -49,14 +49,14 @@
                                         <li>Ставити лайки улюбленим сервісам</li>
                                     </ul>
                                 </div>
-                                <a href="#!" class="btn btn_border">Вхід</a>
+                                <a href="{{url('/login')}}" class="btn btn_border">Вхід</a>
                             </div>
                         </div>
 
                         <div class="col-lg-7 col-md-7">
                             <div class="signup_form">
                                 <h2 class="title_text">Реєстрація на сайті</h2>
-                                <form method="post" action="{{url('/')}}/register">
+                                <form method="post" action="{{url('/register')}}">
                                     @csrf
                                     <div class="form_item">
                                         <h4 class="input_title">Ваше ім'я</h4>
@@ -95,6 +95,19 @@
                                             required
                                         >
                                         @error('password')
+                                        <p class="text-danger mt-1"> {{$message}}</p>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form_item">
+                                        <h4 class="input_title">Повторіть пароль</h4>
+                                        <input
+                                            type="password"
+                                            name="password_confirmation"
+                                            placeholder="**********"
+                                            required
+                                        >
+                                        @error('password_confirm')
                                         <p class="text-danger mt-1"> {{$message}}</p>
                                         @enderror
                                     </div>

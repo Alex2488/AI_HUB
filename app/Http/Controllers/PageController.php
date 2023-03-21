@@ -40,5 +40,17 @@ class PageController extends Controller
             return view('service', compact('service', 'categories'));
     }
 
+    public function showAbout (){
+        return view('about');
+    }
+
+    public function showNews (){
+        return view('news');
+    }
+
+    public function showBlog (){
+        return view('blog');
+    }
+
 
 }

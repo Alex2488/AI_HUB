@@ -46,7 +46,7 @@
                         @else
                             <input type="search" name="search" placeholder="Пошук...">
                         @endif
-                            <button type="submit"><i class="ti-search"></i></button>
+                        <button type="submit"><i class="ti-search"></i></button>
                     </form>
                 </div>
             </div>
@@ -67,22 +67,27 @@
                 </ul>
             </div>
 
-            <div class="jobs_grid element_grid " >
+            <div class="jobs_grid element_grid ">
 
                 @foreach($services as $service)
 
                     <div class="element-item category-{{$service -> category_id}}"
                          data-category="category-{{$service -> category_id}}">
                         <div data-aos="fade-up" data-aos-delay="300">
-                            <div class="job_item clearfix d-flex align-items-center">
-                                <div class="item_icon">
-                                    <img src="{{ url('/') . Storage::url($service->logo) }}" alt="image_not_found">
+                            <div class="job_item d-flex justify-content-between align-items-center">
+                                <div class="job_item_container">
+                                    <div class="item_icon">
+                                        <img src="{{ url('/') . Storage::url($service->logo) }}" alt="image_not_found">
+                                    </div>
+                                    <div class="item_content">
+                                        <h3 class="item_title"><a
+                                                href="{{url('/')}}/services/{{$service -> slug}}">{{$service->title}}</a>
+                                        </h3>
+                                        <p class="mb-0 pr-4">{{$service -> excerpt}}</p>
+                                    </div>
                                 </div>
-                                <div class="item_content">
-                                    <h3 class="item_title"><a
-                                            href="{{url('/')}}/services/{{$service -> slug}}">{{$service->title}}</a>
-                                    </h3>
-                                    <p class="mb-0">{{$service -> excerpt}}</p>
+                                <div class="btns_group">
+                                    @include('components.service-like')
                                 </div>
                             </div>
                         </div>
@@ -94,34 +99,6 @@
     </section>
     <!-- job_section - end
     ================================================== -->
-
-    <!-- Modal -->
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Видалення сервісу</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-footer">
-                    <form id="delete-form" method="post">
-                        @csrf
-                        @method ('DELETE')
-
-                        <button type="button" class="btn btn-danger btn-exit " data-dismiss="modal">No</button>
-
-                        <span class="text-right">
-                <button type="button" class="btn btn-primary btn-delete" data-dismiss="modal">Yes</button>
-            </span>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Modal -->
 
 
 </x-layout>

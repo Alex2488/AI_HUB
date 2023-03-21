@@ -42,7 +42,7 @@ Developer:		:  Rony
   23 - faq
   24 - contact page
   25 - error page
-  26 - register pages
+  26 - auth pages
 
   27 - home pages
 
@@ -7695,7 +7695,6 @@ button {
 
 .job_item .item_content {
     display: table;
-    padding-top: 12px;
 }
 
 .job_item .item_title > a {
@@ -8265,7 +8264,7 @@ button {
 
 /* 25 - error page - end
 ==================================================================================================== */
-/* 26 - register pages - start
+/* 26 - auth pages - start
 ==================================================================================================== */
 .register_section.bg_gray {
     background-color: #fafafe;
@@ -8423,7 +8422,7 @@ button {
     margin-bottom: 40px;
 }
 
-/* 26 - register pages - end
+/* 26 - auth pages - end
 ==================================================================================================== */
 /* 27 - home pages - start
 ==================================================================================================== */
@@ -11125,13 +11124,13 @@ button {
     }
 
     /* service page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section .signin_image {
         width: 540px;
         margin-right: -160px;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* home agency - start */
     .banner_section .banner_content .title_text {
         font-size: 54px;
@@ -11585,13 +11584,13 @@ button {
     }
 
     /* service page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section .signin_image {
         width: 490px;
         margin-right: -100px;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* home agency - start */
     .agency_banner .bg_2 {
         max-width: 870px;
@@ -11959,13 +11958,13 @@ button {
     }
 
     /* service page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section .signin_image {
         width: 460px;
         margin-right: -40px;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* home digital agency - start */
     .introduction_section .video_wrap .leaf_image_1,
     .introduction_section .video_wrap .leaf_image_2 {
@@ -12193,12 +12192,12 @@ button {
     }
 
     /* service page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section .signin_image {
         margin-right: 0px;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* home agency - start */
     .agency_banner .bg_2 {
         max-width: 810px;
@@ -13061,7 +13060,7 @@ button {
     }
 
     /* about page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section .signup_wrap .info_wrap h3 {
         font-size: 28px;
         margin-bottom: 35px;
@@ -13071,7 +13070,7 @@ button {
         padding: 0px 55px;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* home app landing - start */
     .app_landing_banner .banner_content .title_text {
         font-size: 54px;
@@ -13354,13 +13353,13 @@ button {
     }
 
     /* service page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section .signin_image {
         width: 350px;
         margin-right: 50px;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* process page - start */
     .process_section .process_item:nth-child(2n) .item_content::before {
         left: -68px;
@@ -14050,7 +14049,7 @@ button {
     }
 
     /* service page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section .signin_image {
         width: auto;
         float: none;
@@ -14066,7 +14065,7 @@ button {
         text-align: center;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* process page - start */
     .process_section .process_item .order-last {
         order: 13;
@@ -15047,7 +15046,7 @@ button {
     }
 
     /* service page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section .signup_wrap .info_wrap,
     .register_section .signup_wrap .signup_form {
         padding: 0px 45px;
@@ -15067,7 +15066,7 @@ button {
         margin-bottom: 40px;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* process page - start */
     .process_section .process_item:nth-child(2n) .item_content::after {
         left: -58px;
@@ -15901,7 +15900,7 @@ button {
     }
 
     /* service page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section .signup_wrap {
         background: none;
         box-shadow: none;
@@ -15920,7 +15919,7 @@ button {
         margin-bottom: 60px;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* process page - start */
     .process_section .line_bg {
         background: none !important;
@@ -17487,7 +17486,7 @@ button {
     }
 
     /* service page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section .signin_image {
         max-width: 400px;
         margin: 0px auto 60px;
@@ -17507,7 +17506,7 @@ button {
         margin-bottom: 30px;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* pricing page - start */
     .pricing_plan_1 .btn,
     .pricing_plan_3 .btn {
@@ -20560,7 +20559,7 @@ button {
     }
 
     /* service page - end */
-    /* register page - start */
+    /* auth page - start */
     .register_section {
         padding-left: 15px;
         padding-right: 15px;
@@ -20585,7 +20584,7 @@ button {
         padding-right: 0px;
     }
 
-    /* register page - end */
+    /* auth page - end */
     /* pricing page - start */
     .pricing_tab {
         font-size: 14px;
@@ -21670,6 +21669,27 @@ button {
 
 .job_item .item_icon > img {
     height: 80px;
+}
+
+.item_icon {
+
+}
+
+.service-like {
+    right: 10px;
+    top: 50%;
+    transform: translateX(50%);
+}
+
+.btns_group .heart_btn > i {
+    color: #4154f1;
+}
+
+.btns_group .heart_btn {
+    font-size: 20px;
+    margin-top: 8px;
+    font-weight: 500;
+    color: #6a7c92;
 }
 
 

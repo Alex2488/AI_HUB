@@ -79,7 +79,7 @@
                                 <button type="submit" class="btn bg_default_blue mb-30">Війти</button>
 
                                 <p class="mb-0 text-center">
-                                    Досі не зареєстровані? <a href="{{url('register')}}"><u>Зареєструватись</u></a>
+                                    Досі не зареєстровані? <a href="{{url('auth')}}"><u>Зареєструватись</u></a>
                                 </p>
 
                             </form>

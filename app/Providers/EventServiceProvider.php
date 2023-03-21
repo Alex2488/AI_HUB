@@ -21,7 +21,7 @@ class EventServiceProvider extends ServiceProvider
     ];
 
     /**
-     * register any events for your application.
+     * auth any events for your application.
      */
     public function boot(): void
     {

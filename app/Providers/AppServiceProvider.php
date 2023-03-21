@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * register any application service.
+     * auth any application service.
      */
     public function register(): void
     {
