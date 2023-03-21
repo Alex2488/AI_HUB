@@ -13,18 +13,18 @@ return new class extends Migration
     {
 
 
-        Schema::create('service_user_likes', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('service_id')->constrained('service')->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->timestamps();
+            Schema::create('service_user_likes', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('service_id')->constrained('services')->cascadeOnDelete();
+                $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+                $table->timestamps();
 
-            $table->index('service_id', 'sul_service-idx');
-            $table->index('user_id', 'sul_user-idx');
+                $table->index('service_id', 'sul_service-idx');
+                $table->index('user_id', 'sul_user-idx');
 
-            $table->foreign('service_id', 'sul_service_fk')->on('service')->references('id');
-            $table->foreign('user_id', 'sul_user_fk')->on('users')->references('id');
-        });
+                $table->foreign('service_id', 'sul_service_fk')->on('services')->references('id');
+                $table->foreign('user_id', 'sul_user_fk')->on('users')->references('id');
+            });
 
     }
 
