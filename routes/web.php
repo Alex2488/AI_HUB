@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\PageController::class, 'index'])->name('home');
+Route::get('/', [\App\Http\Controllers\PageController::class, 'index'])->name('home')->middleware(['verified']);
 Route::get('services', [\App\Http\Controllers\PageController::class, 'allServices'])->name('services');
 Route::get('services/{service:slug}', [\App\Http\Controllers\PageController::class, 'showService'])->name('show-service');
 Route::get('blog', [\App\Http\Controllers\PageController::class, 'showBlog'])->name('blog');
@@ -34,6 +34,11 @@ Route::post('service/{service:slug}/likes', [\App\Http\Controllers\LikeControlle
     ]);
 
 });*/
+
+Route::middleware(['auth', 'verified'])->get('/verify', function () {
+    return view('verify-email');
+});
+
 
 
 Route::group(['prefix' => 'admin',  'middleware' => 'admin'], function()
@@ -61,6 +66,9 @@ Route::group(['prefix' => 'admin',  'middleware' => 'admin'], function()
     Route::delete('delete-category/{dataService:slug}', [\App\Http\Controllers\AdminCategoryController::class, 'deleteCategory'])->name('delete-category');
 });
 
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
 
 
 

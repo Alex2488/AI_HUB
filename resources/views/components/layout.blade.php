@@ -66,8 +66,17 @@
 
                             <li class="menu_item_has_child">
                                 <a href="{{url('about')}}">Про нас</a>
-
                             </li>
+                            <li>
+                                @if (auth()->user())
+                                    <div class="col-lg-2">
+                                        <p>{{auth()->user()->name}}</p>
+                                    </div>
+                                @endif
+                            </li>
+
+
+
 
 
 

@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="signin_form" data-aos="fade-up" data-aos-delay="500">
-                        <form method="post" action="{{url('/')}}/login">
+                        <form method="post" action="{{url('/login')}}">
                             @csrf
                             <div class="form_item">
                                 <h4 class="input_title">Адреса електронної пошти</h4>
