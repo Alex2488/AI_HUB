@@ -12,12 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Fortify\Features;
 use Laravel\Fortify\Fortify;
-use Laravel\Fortify\Actions\AttemptToAuthenticate;
-use Laravel\Fortify\Actions\EnsureLoginIsNotThrottled;
-use Laravel\Fortify\Actions\PrepareAuthenticatedSession;
-use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -49,34 +44,23 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
 
-        Fortify::registerView(fn () => view('auth.register'));
+        Fortify::registerView(function () {
+            return view('auth.register');
+        });
+
         Fortify::loginView(function () {
             return view('auth.login');
         });
-        Fortify::verifyEmailView(function () {
-            return view('auth.verify-email');
-        });
-
 
         Fortify::authenticateUsing(function (Request $request) {
-
-
             $user = User::where('email', $request->email)->first();
-            dd(bcrypt($request->password), $user->password);
+
             if ($user &&
-                Hash::check(bcrypt($request->password), $user->password)) {
+                Hash::check($request->password, $user->password)) {
                 return $user;
             }
         });
 
 
-        /*Fortify::authenticateThrough(function (Request $request) {
-            return array_filter([
-                config('fortify.limiters.login') ? null : EnsureLoginIsNotThrottled::class,
-                Features::enabled(Features::twoFactorAuthentication()) ? RedirectIfTwoFactorAuthenticatable::class : null,
-                AttemptToAuthenticate::class,
-                PrepareAuthenticatedSession::class,
-            ]);
-        });*/
     }
 }

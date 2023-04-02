@@ -16,8 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\PageController::class, 'index'])->name('home')->middleware(['verified']);
-Route::get('services', [\App\Http\Controllers\PageController::class, 'allServices'])->name('services');
+Route::get('services', [\App\Http\Controllers\ServiceController::class, 'index'])->name('services');
 Route::get('services/{service:slug}', [\App\Http\Controllers\PageController::class, 'showService'])->name('show-service');
+
+Route::get('category/{category:slug}', function (\App\Models\Category $category) {
+    return view('services.services', [
+       'services' => $category->services,
+        'categories' => \App\Models\Category::all()
+    ]);
+});
+
+
+
 Route::get('blog', [\App\Http\Controllers\PageController::class, 'showBlog'])->name('blog');
 Route::get('news', [\App\Http\Controllers\PageController::class, 'showNews'])->name('news');
 Route::get('about', [\App\Http\Controllers\PageController::class, 'showAbout'])->name('about');
@@ -35,9 +45,7 @@ Route::post('service/{service:slug}/likes', [\App\Http\Controllers\LikeControlle
 
 });*/
 
-Route::middleware(['auth', 'verified'])->get('/verify', function () {
-    return view('verify-email');
-});
+
 
 
 
@@ -61,9 +69,9 @@ Route::group(['prefix' => 'admin',  'middleware' => 'admin'], function()
     Route::get('show-categories', [\App\Http\Controllers\AdminCategoryController::class, 'showCategories'])->name('show-categories');
     Route::get('add-category', [\App\Http\Controllers\AdminCategoryController::class, 'showAddCategory'])->name('add-category');
     Route::post('add-category/submit-category', [\App\Http\Controllers\AdminCategoryController::class, 'addCategory'])->name('submit-category');
-    Route::get('edit-category/{dataService:slug}', [\App\Http\Controllers\AdminCategoryController::class, 'showCategory'])->name('edit-category');
-    Route::post('edit-category/{dataService:slug}/update-category', [\App\Http\Controllers\AdminCategoryController::class, 'updateCategory'])->name('update-category');
-    Route::delete('delete-category/{dataService:slug}', [\App\Http\Controllers\AdminCategoryController::class, 'deleteCategory'])->name('delete-category');
+    Route::get('edit-category/{category:id}', [\App\Http\Controllers\AdminCategoryController::class, 'showEditCategory'])->name('edit-category');
+    Route::post('edit-category/{category:id}/update-category', [\App\Http\Controllers\AdminCategoryController::class, 'updateCategory'])->name('update-category');
+    Route::delete('delete-category/{category:id}', [\App\Http\Controllers\AdminCategoryController::class, 'deleteCategory'])->name('delete-category');
 });
 
 Route::get('/email/verify', function () {

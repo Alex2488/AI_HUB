@@ -1,5 +1,4 @@
 <x-layout>
-    @include('admin.include.admin_sidebar')
     <section id="breadcrumb_section"
              class="breadcrumb_section bg_gradient_blue deco_wrap d-flex align-items-center text-white clearfix">
         <div class="container">
@@ -33,7 +32,7 @@
              data-aos-delay="100">
         <div class="container">
 
-
+            @include('admin.include.navbar')
 
             <div class="table_wrap border_bottom mb-50">
                 <table class="table m-0">

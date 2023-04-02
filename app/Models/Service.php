@@ -16,6 +16,33 @@ class Service extends Model
     protected $withCount = ['likedUsers'];
 
 
+    public function scopeFilter ($query, array $filters) {
+
+        $query -> when($filters['search'] ?? false, fn ($query, $search) =>
+            $query->where(fn($query)=>
+                $query
+                    ->where('title', 'like', '%' . $search . '%')
+                    ->orWhere('excerpt', 'like', '%' . $search . '%')
+            )
+
+        );
+
+        $query -> when($filters['category'] ?? false, fn ($query, $category) =>
+            $query->whereHas('category', fn ($query) =>
+                $query->where('slug', $category))
+
+
+
+//                ->whereExists(fn($query)  =>
+//                $query->from('categories')
+//                    ->whereColumn ('categories.id', 'services.category_id')
+//                    ->where ('categories.slug', $category)
+//                );
+        );
+
+    }
+
+
 
     public function category () {
         return $this -> belongsTo(Category::class);

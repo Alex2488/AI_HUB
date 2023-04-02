@@ -13,6 +13,9 @@
                             <a href="{{url('/')}}">Головна</a>
                         </li>
                         <li>
+                            <a href="{{route('show-services')}}">Сервіси</a>
+                        </li>
+                        <li>
                             Додати сервіс
                         </li>
                     </ul>
@@ -139,10 +142,15 @@
                                 <textarea name="benefits_3" placeholder="Третій абзац"></textarea>
                             </div>
 
-                            <div class="btn_wrap">
-                                <button type="submit" class="btn bg_default_blue">Додати сервіс</button>
-                            </div>
+                            <div class="buttons-group d-flex justify-content-between">
+                                <div class="btn_wrap">
+                                    <a href="{{route('show-services')}}" class="btn btn_border border_blue float-right">Назад</a>
+                                </div>
 
+                                <div class="btn_wrap">
+                                    <button type="submit" class="btn bg_default_blue">Додати сервіс</button>
+                                </div>
+                            </div>
 
 
 

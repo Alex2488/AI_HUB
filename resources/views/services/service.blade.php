@@ -39,7 +39,7 @@
                 <div class="row mb-50 justify-content-lg-between justify-content-md-between justify-content-sm-center">
                     <div class="col-lg-8 col-md-7 col-sm-12">
                         <div class="item_image mr--30" data-aos="fade-up" data-aos-delay="300">
-                            <img src="{{ url('/') . Storage::url($service->image) }}" alt="image_not_found">
+                            <img src="{{  url('/') . Storage::url($service->image) }}" alt="image_not_found">
                         </div>
                     </div>
 
@@ -161,14 +161,15 @@
                                     <div class="tag_list ul_li">
                                         <ul class="clearfix d-flex">
                                             <li class="mx-2"><a
-                                                    href="{{$service->link_to_service}}">{{$service->title}}</a></li>
+                                                        href="{{$service->link_to_service}}">{{$service->title}}</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="comments" class="comment_area mt-4 mb-80 clearfix">
-                            @if (auth()->check())
+                            @if (auth()->check() && auth()->user()->email_verified_at !== null)
                                 <div class="comment_form" data-aos="fade-up" data-aos-delay="100">
                                     <h5 class="title_text mb-50">{{auth()->user()->name}}, поділись враженнями від
                                         сервісу</h5>
@@ -177,13 +178,13 @@
 
                                         <div class="form_item">
                                     <textarea
-                                        name="body"
-                                        placeholder="Comment"></textarea>
+                                            name="body"
+                                            placeholder="Comment"></textarea>
                                         </div>
                                         <input
-                                            type="hidden"
-                                            name="service_id"
-                                            value="{{$service->id}}"
+                                                type="hidden"
+                                                name="service_id"
+                                                value="{{$service->id}}"
                                         >
                                         <button type="submit" class="btn bg_default_blue mb-4">Відправити</button>
                                     </form>
@@ -191,10 +192,28 @@
                                 @foreach ($service->comments as $comment)
                                     <x-service-comment :comment="$comment"/>
                                 @endforeach
+                            @elseif (auth()->check() && auth()->user()->email_verified_at === null)
+                                <div class="comment_form" data-aos="fade-up" data-aos-delay="100">
+                                    <h3 class="title_text mb-50">Для того, щоб бачити коментарі, необхідно підтвердити
+                                        електронну пошту.
+                                        <form action="{{route('verification.send')}}" method="POST">
+                                            @csrf
+
+
+                                            <button type="submit" class="btn-link">
+                                                Направити повтоно лист?
+                                            </button>
+
+                                        </form>
+                                    </h3>
+                                </div>
                             @else
                                 <div class="comment_form" data-aos="fade-up" data-aos-delay="100">
                                     <h3 class="title_text mb-50">Для того, щоб бачити коментарі, необхідно <a
-                                            href="{{url('login')}}"> авторизуватись </a></h3>
+                                                href="{{route('register')}}"> зареєструватись </a> або <a
+                                                href="{{route('login')}}"> авторизуватись </a> на сайті.
+
+                                    </h3>
                                 </div>
                             @endif
                         </div>

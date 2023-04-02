@@ -16,8 +16,10 @@ class AdminCategoryController extends Controller
 
     public function showAddCategory () {
 
-        return view('add-category');
+        return view('admin.category.add-category');
     }
+
+
 
     public function addCategory(CategoryRequest $request)
     {
@@ -27,26 +29,33 @@ class AdminCategoryController extends Controller
 
         $category->save();
 
-        return redirect()->back();
+        return redirect()->route('show-categories');
 
+    }
+
+    public function showEditCategory ($id) {
+
+        $category = Category::find($id);
+        return view('admin.category.edit-category', compact('category'));
     }
 
     public function updateCategory($id, CategoryRequest $request)
     {
 
         $category = Category::find($id);
-        $category->title = $request->input('title');
-        $category->slug = $request->input('slug');
+        $category->name = $request->input('name');
+        $category->slug = Str::slug($request->name);
 
         $category->save();
 
-        return redirect()->route('service', $id);
+        return redirect()->route('show-categories', $id);
 
     }
 
     public function deleteCategory($id)
     {
-        CategoryRequest::find($id)->delete();
+
+        Category::find($id)->delete();
 
         return back();
 

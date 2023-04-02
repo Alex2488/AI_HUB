@@ -5,7 +5,8 @@
         <div class="container">
             <div class="breadcrumb_content text-center decrease_size" data-aos="fade-up" data-aos-delay="100">
                 <h1 class="page_title mb-30">
-                    Редагування користувача
+                    Додати категорію
+
                 </h1>
                 <div class="breadcrumb_nav ul_li_center">
                     <ul class="clearfix">
@@ -13,10 +14,10 @@
                             <a href="{{url('/')}}">Головна</a>
                         </li>
                         <li>
-                            <a href="{{route('show-users')}}">Користувачі</a>
+                            <a href="{{route('show-categories')}}">Категорії</a>
                         </li>
                         <li>
-                            Редагування користувача
+                            Додати категорію
                         </li>
                     </ul>
                 </div>
@@ -41,7 +42,7 @@
                     <div class="contact_form" data-aos="fade-up" data-aos-delay="500">
 
                         <div class="section_title decrease_size mb-50">
-                            <h2 class="title_text mb-30">Редагування користувача {{$user->name}} </h2>
+                            <h2 class="title_text mb-30">Редагувати категорію {{$category->name}}</h2>
 
                             @if($errors->any())
                                 <div class="alert alert-danger">
@@ -54,41 +55,21 @@
                             @endif
                         </div>
 
-                        <form action="{{ route('update-user', $user->id )}}" method="post">
-
+                        <form action="{{route('update-category', $category)}}" method="post">
                             @csrf
                             <div class="form_item">
-                                <h6 class="ml-5">Ім'я користувача</h6>
-                                <input type="text" name="name" value="{{$user->name}}"
-                                       placeholder="Ім'я користувача">
+                                <label for="name">Назва категорії</label>
+                                <input type="text" value="{{$category->name}}" name="name" placeholder="Найменування категорії">
                             </div>
-                            <div class="form_item">
-                                <h6 class="ml-5">Електронна пошта</h6>
-                                <input type="text" name="email" value="{{$user->email}}" placeholder="Електронна пошта">
-                            </div>
-                            <div class="form_item dropdown">
-                                <h6 class="ml-5">Роль</h6>
-                                <div class="input-group mb-3">
-                                    <select class="custom-select" name="role" id="inputGroupSelect01">
 
-
-                                        <option  {{($user->role === 0) ? 'selected' : ''}} value="0"> Користувач</option>
-                                        <option  {{($user->role === 1) ? 'selected' : ''}} value="1"> Адміністратор</option>
-
-
-
-                                    </select>
-                                </div>
-                            </div>
                             <div class="buttons-group d-flex justify-content-between">
                                 <div class="btn_wrap">
-                                    <a href="{{route('show-users')}}" class="btn btn_border border_blue float-right">Назад</a>
+                                    <a href="{{route('show-categories')}}" class="btn btn_border border_blue float-right">Назад</a>
                                 </div>
                                 <div class="btn_wrap">
                                     <button type="submit" class="btn bg_default_blue">Зберегти зміни</button>
                                 </div>
                             </div>
-
                         </form>
                     </div>
                 </div>

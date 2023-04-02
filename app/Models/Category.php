@@ -13,7 +13,7 @@ class Category extends Model
         'slug', 'name'
     ];
 
-    public function service () {
+    public function services () {
         return $this -> hasMany(Service::class);
 
     }

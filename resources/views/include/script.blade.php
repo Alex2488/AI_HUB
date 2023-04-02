@@ -42,7 +42,6 @@
     $('.show_confirm').click(function (event) {
         var form = $(this).closest("form");
         var name = $(this).data("title-service");
-        debugger
         event.preventDefault();
         swal({
             title: `Ви впевнені, що хочете видалити ${name} ?`,
@@ -65,3 +64,27 @@
         bsCustomFileInput.init();
     });
 </script>
+
+<script>
+    const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+const slides = document.querySelector('.slides');
+
+let currentIndex = 0;
+
+nextButton.addEventListener('click', () => {
+if (currentIndex < 2) {
+currentIndex++;
+slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+});
+
+prevButton.addEventListener('click', () => {
+if (currentIndex > 0) {
+currentIndex--;
+slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+});
+</script>
+
+

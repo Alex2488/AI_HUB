@@ -1,5 +1,5 @@
 <x-layout>
-    @include('admin.include.admin_sidebar')
+
     <section id="breadcrumb_section"
              class="breadcrumb_section bg_gradient_blue deco_wrap d-flex align-items-center text-white clearfix">
         <div class="container">
@@ -13,7 +13,7 @@
                             <a href="{{url('/')}}">Головна</a>
                         </li>
                         <li>
-                            Панель адмністратора
+                            Категорії
                         </li>
                     </ul>
                 </div>
@@ -33,8 +33,8 @@
              data-aos-delay="100">
         <div class="container">
 
-            <a href="{{route('add-category')}}" class="btn btn_border float-right mb-4">Нова категорія
-            </a>
+            @include('admin.include.navbar')
+
 
             <div class="table_wrap border_bottom mb-50">
                 <table class="table m-0">
@@ -52,6 +52,7 @@
 
                     @foreach ($categories as $category)
 
+
                         <tr>
                             <td class="text-center">
                                 <div class="product_item clearfix">
@@ -61,7 +62,8 @@
                                 </div>
                             </td>
                             <td class="text-center">
-                                <span class="text-center">{{$category->service->count()}}</span>
+
+                                <span class="text-center">{{$category->services->count()}}</span>
                             </td>
                             <td class="text-center">
                                 <span class="text-center">{{$category -> slug}}</span>

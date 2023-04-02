@@ -7660,6 +7660,8 @@ button {
     background-color: rgba(65, 84, 241, 0.102);
 }
 
+
+
 /* job section setting - start
 ================================================== */
 /* job item - start
@@ -21690,6 +21692,45 @@ button {
     margin-top: 8px;
     font-weight: 500;
     color: #6a7c92;
+
 }
+
+.dropdown-menu {
+    z-index: 100;
+}
+
+
+.category-btn {
+    color: #212529;
+    background-color: #f3f4f9;
+    border-color: #d3d9df;
+}
+
+.category-btn:hover, .category-btn.active {
+    color: #212529;
+    background-color: #dae0e5;
+    border-color: #d3d9df;
+}
+
+.page-item .page-link {
+
+    color: #6a7c92;
+
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #212529;
+    background-color: #dae0e5;
+    border-color: #dae0e5;
+}
+
+
+
+
+
+
+
+
 
 

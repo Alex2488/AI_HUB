@@ -1,5 +1,4 @@
 <x-layout>
-    @include('admin.include.admin_sidebar')
 
     <section id="breadcrumb_section"
              class="breadcrumb_section bg_gradient_blue deco_wrap d-flex align-items-center text-white clearfix">
@@ -35,9 +34,8 @@
     <section id="admin_section" class="cart_section sec_ptb_120 bg_gray clearfix" data-aos="fade-up"
              data-aos-delay="100">
         <div class="container">
+            @include('admin.include.navbar')
 
-            <a href="{{route('add-service')}}" class="btn btn_border float-right mb-4">Новий сервіс
-            </a>
 
             <div class="table_wrap border_bottom mb-50">
                 <table class="table m-0">

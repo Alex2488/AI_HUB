@@ -21,7 +21,7 @@ class AdminServiceController extends Controller
     public function showAddService () {
 
         $categories = Category::all();
-        return view('add-service', compact('categories'));
+        return view('admin.service.add-service', compact('categories'));
     }
 
     public function addService(Request $r)
