@@ -39,16 +39,10 @@ class AdminServiceController extends Controller
         $service->image = $imagePath;
         $service->link_to_service = $r->link_to_service;
         $service->excerpt = $r->excerpt;
-        $service->information_1 = $r->information_1;
-        $service->information_2 = $r->information_2;
-        $service->information_3 = $r->information_3;
-        $service->functionality_1 = $r->functionality_1;
-        $service->functionality_2 = $r->functionality_2;
-        $service->functionality_3 = $r->functionality_3;
-        $service->functionality_4 = $r->functionality_4;
-        $service->benefits_1 = $r->benefits_1;
-        $service->benefits_2 = $r->benefits_2;
-        $service->benefits_3 = $r->benefits_3;
+        $service->content = $r->main_content;
+        $service->developer = $r->developer;
+        $service->release_date = $r->release_date;
+        $service->is_published = '0';
         $service->category_id = $r->category_id;
 
         $service->save();
@@ -85,6 +79,23 @@ class AdminServiceController extends Controller
         $service->benefits_2 = $r->benefits_2;
         $service->benefits_3 = $r->benefits_3;
         $service->category_id = $r->category_id;
+
+
+
+        $service->title = $r->title;
+        $service->slug = Str::slug($r->title);
+//        $service->logo = $logoPath;
+//        $service->image = $imagePath;
+        $service->link_to_service = $r->link_to_service;
+        $service->excerpt = $r->excerpt;
+        $service->content = $r->main_content;
+        $service->developer = $r->developer;
+        $service->release_date = $r->release_date;
+        $service->is_published = '0';
+        $service->category_id = $r->category_id;
+
+
+
 
         $service->save();
 

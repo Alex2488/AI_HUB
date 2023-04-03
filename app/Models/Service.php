@@ -10,7 +10,7 @@ class Service extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id', 'slug', 'title', 'logo_link','link_to_service','category_id','excerpt','information_1','information_2','information_3','functionality_1','functionality_2','functionality_3','functionality_4','benefits_1','benefits_2','benefits_3',
+        'id', 'slug', 'title', 'developer', 'release_date', 'logo', 'image', 'link_to_service','category_id','excerpt','main_content'
     ];
 
     protected $withCount = ['likedUsers'];

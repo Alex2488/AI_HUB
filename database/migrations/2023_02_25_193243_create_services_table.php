@@ -15,21 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('slug')->unique();
             $table->string('title');
+            $table->string('developer');
+            $table->string('release_date');
             $table->string('logo');
             $table->string('image');
             $table->string('link_to_service');
             $table->foreignId('category_id');
             $table->text('excerpt');
-            $table->text('information_1');
-            $table->text('information_2');
-            $table->text('information_3');
-            $table->text('functionality_1');
-            $table->text('functionality_2');
-            $table->text('functionality_3');
-            $table->text('functionality_4');
-            $table->text('benefits_1');
-            $table->text('benefits_2');
-            $table->text('benefits_3');
+            $table->text('main_content');
+            $table->string('is_published');
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
 
