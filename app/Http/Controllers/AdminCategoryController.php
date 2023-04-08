@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class AdminCategoryController extends Controller
+
+
 {
     public function showCategories() {
         $categories = Category::all();
@@ -29,7 +31,7 @@ class AdminCategoryController extends Controller
 
         $category->save();
 
-        return redirect()->route('show-categories');
+        return redirect()->route('show-categories')->with('success', 'Нову категорію збережено');
 
     }
 
@@ -48,7 +50,7 @@ class AdminCategoryController extends Controller
 
         $category->save();
 
-        return redirect()->route('show-categories', $id);
+        return redirect()->route('show-categories', $id)->with('success', 'Зміни збережені');
 
     }
 

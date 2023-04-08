@@ -53,11 +53,12 @@ Route::group(['prefix' => 'admin',  'middleware' => 'admin'], function()
 {
     Route::controller(\App\Http\Controllers\AdminServiceController::class)->group(function () {
         Route::get('services','showServices')->name('show-services');
-        Route::get('add-service', 'showAddService')->name('add-service');
-        Route::post('add-service/submit-service', 'addService')->name('submit-service');
-        Route::get('edit-service/{service:slug}', 'showEditService')->name('edit-service');
-        Route::post('edit-service/{service:slug}/update-service', 'updateService')->name('update-service');
-        Route::delete('delete-service/{service:slug}', 'deleteService')->name('delete-service');
+        Route::get('add-service', 'showCreate')->name('add-service');
+        Route::post('add-service/submit-service', 'create')->name('submit-service');
+        Route::get('services/{service:slug}/edit', 'showEdit')->name('edit-service');
+        // patch? post?
+        Route::get('services/{service:slug}/update', 'update')->name('update-service');
+        Route::delete('services/{service:slug}', 'delete')->name('delete-service');
     });
 
 
@@ -70,7 +71,9 @@ Route::group(['prefix' => 'admin',  'middleware' => 'admin'], function()
     Route::get('add-category', [\App\Http\Controllers\AdminCategoryController::class, 'showAddCategory'])->name('add-category');
     Route::post('add-category/submit-category', [\App\Http\Controllers\AdminCategoryController::class, 'addCategory'])->name('submit-category');
     Route::get('edit-category/{category:id}', [\App\Http\Controllers\AdminCategoryController::class, 'showEditCategory'])->name('edit-category');
-    Route::post('edit-category/{category:id}/update-category', [\App\Http\Controllers\AdminCategoryController::class, 'updateCategory'])->name('update-category');
+    // patch? post?
+
+    Route::get('edit-category/{category:id}/update-category', [\App\Http\Controllers\AdminCategoryController::class, 'updateCategory'])->name('update-category');
     Route::delete('delete-category/{category:id}', [\App\Http\Controllers\AdminCategoryController::class, 'deleteCategory'])->name('delete-category');
 });
 

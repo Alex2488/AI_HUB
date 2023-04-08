@@ -85,65 +85,11 @@
 
                     <div class="col-lg-8 col-md-10 col-sm-12">
 
-                        <p class="mb-30">
-                            {{$service->information_1}}
-                        </p>
-
-                        <p>
-                            {{$service->information_2}}
-                        </p>
-
-                        <p>
-                            {{$service->information_3}}
-                        </p>
 
 
-                        <h3 class="title_text mb-30">Основні функції сервису {{$service->title}}</h3>
-
-                        <div class="job_info_list mb-30 ul_li_block">
-                            <ul class="clearfix">
-                                <li>
-                                    <p class="mb-0">
-                                        {{$service->functionality_1}}
-                                    </p>
-                                </li>
-
-                                <li>
-                                    <p class="mb-0">
-                                        {{$service->functionality_2}}
-                                    </p>
-                                </li>
-
-                                <li>
-                                    <p class="mb-0">
-                                        {{$service->functionality_3}}
-                                    </p>
-                                </li>
-
-                                <li>
-                                    <p class="mb-0">
-                                        {{$service->functionality_4}}
-                                    </p>
-                                </li>
-
-
-                            </ul>
+                        <div class="">
+                            {{$service->main_content}}
                         </div>
-
-                        <h3 class="title_text mb-30">Переваги сервису {{$service->title}}</h3>
-
-                        <p>
-                            {{$service->benefits_1}}
-                        </p>
-
-                        <p>
-                            {{$service->benefits_2}}
-
-                        </p>
-
-                        <p>
-                            {{$service->benefits_3}}
-                        </p>
 
                         <div class="col-12">
                             <div class="service-footer d-flex flex-column justify-content-center" data-aos="fade-up"

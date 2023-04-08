@@ -41,7 +41,7 @@
 
     $('.show_confirm').click(function (event) {
         var form = $(this).closest("form");
-        var name = $(this).data("title-service");
+        var name = $(this).data("name");
         event.preventDefault();
         swal({
             title: `Ви впевнені, що хочете видалити ${name} ?`,

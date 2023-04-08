@@ -7,6 +7,7 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class AdminServiceController extends Controller
 {
@@ -18,40 +19,62 @@ class AdminServiceController extends Controller
     }
 
 
-    public function showAddService () {
+    public function showCreate () {
 
         $categories = Category::all();
         return view('admin.service.add-service', compact('categories'));
     }
 
-    public function addService(Request $r)
+    public function create(Request $r)
     {
-        $logoImage = $r->logo;
-        $logoPath = Storage::put('/public/image', $logoImage);
+//        $logoImage = $r->logo;
+//        $logoPath = Storage::put('/public/image', $logoImage);
+//
+//        $image = $r->image;
+//        $imagePath = Storage::put('public/image', $image );
+//
+//        $service = new Service;
+//        $service->title = $r->title;
+//        $service->slug = Str::slug($r->title);
+//        $service->logo = $logoPath;
+//        $service->image = $imagePath;
+//        $service->link_to_service = $r->link_to_service;
+//        $service->excerpt = $r->excerpt;
+//        $service->main_content = $r->main_content;
+//        $service->developer = $r->developer;
+//        $service->release_date = $r->release_date;
+//        $service->is_published = $r->is_published;
+//        $service->category_id = $r->category_id;
+//
+//
+//
+//        $service->save();
 
-        $image = $r->image;
-        $imagePath = Storage::put('public/image', $image );
 
-        $service = new Service;
-        $service->title = $r->title;
-        $service->slug = Str::slug($r->title);
-        $service->logo = $logoPath;
-        $service->image = $imagePath;
-        $service->link_to_service = $r->link_to_service;
-        $service->excerpt = $r->excerpt;
-        $service->content = $r->main_content;
-        $service->developer = $r->developer;
-        $service->release_date = $r->release_date;
-        $service->is_published = '0';
-        $service->category_id = $r->category_id;
+        $attributes = request()->validate([
+            'title' => 'required',
+            'image' => 'required|image',
+            'logo' => 'required|image',
+            'link_to_service' => 'required',
+            'excerpt' => 'required',
+            'main_content' => 'required',
+            'developer' => 'required',
+            'release_date' => 'required',
+            'is_published' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')],
+        ]);
 
-        $service->save();
+        $attributes['logo'] = Storage::put('/public/image', $r->logo);
+        $attributes['image'] = Storage::put('/public/image', $r->image);
+        $attributes['slug'] = Str::slug($r->title);
 
-        return redirect()->route('show-services');
+        Service::create($attributes);
+
+        return redirect()->route('show-services')->with('success', 'Новий сервіс збережено');
 
     }
 
-    public function showEditService($id)
+    public function showEdit ($id)
     {
         $service = Service::find($id);
         $categories = Category::all();
@@ -59,51 +82,65 @@ class AdminServiceController extends Controller
     }
 
 
-    public function updateService($id, Request $r)
+    public function update(Service $service)
     {
 
-        $service = Service::find($id);
-        $service->title = $r->title;
-        $service->slug = $r->slug;
-        $service->logo_link = $r->logo_link;
-        $service->link_to_service = $r->link_to_service;
-        $service->excerpt = $r->excerpt;
-        $service->information_1 = $r->information_1;
-        $service->information_2 = $r->information_2;
-        $service->information_3 = $r->information_3;
-        $service->functionality_1 = $r->functionality_1;
-        $service->functionality_2 = $r->functionality_2;
-        $service->functionality_3 = $r->functionality_3;
-        $service->functionality_4 = $r->functionality_4;
-        $service->benefits_1 = $r->benefits_1;
-        $service->benefits_2 = $r->benefits_2;
-        $service->benefits_3 = $r->benefits_3;
-        $service->category_id = $r->category_id;
-
-
-
-        $service->title = $r->title;
-        $service->slug = Str::slug($r->title);
+//        $service = Service::find($id);
+//
+//        $logoImage = $r->logo;
+//        $logoPath = Storage::put('/public/image', $logoImage);
+//
+//        $image = $r->image;
+//        $imagePath = Storage::put('public/image', $image );
+//
+//
+//
+//        $service->title = $r->title;
+//        $service->slug = $r->slug;
 //        $service->logo = $logoPath;
 //        $service->image = $imagePath;
-        $service->link_to_service = $r->link_to_service;
-        $service->excerpt = $r->excerpt;
-        $service->content = $r->main_content;
-        $service->developer = $r->developer;
-        $service->release_date = $r->release_date;
-        $service->is_published = '0';
-        $service->category_id = $r->category_id;
+//        $service->link_to_service = $r->link_to_service;
+//        $service->excerpt = $r->excerpt;
+//        $service->content = $r->main_content;
+//        $service->developer = $r->developer;
+//        $service->release_date = $r->release_date;
+//        $service->is_published = $r->is_published;
+//        $service->category_id = $r->category_id;
+//
+//        $service->save();
+
+
+        $attributes = request()->validate([
+            'title' => 'required',
+            'link_to_service' => 'required',
+            'slug' => ['required', Rule::unique('services', 'id')->ignore($service->slug)],
+            'excerpt' => 'required',
+            'main_content' => 'required',
+            'developer' => 'required',
+            'release_date' => 'required',
+            'is_published' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')],
+        ]);
+
+        if (isset($attributes['logo'])){
+            $attributes['logo'] = Storage::put('/public/image', \request()->logo);
+        }
+
+        if (isset($attributes['image'])){
+            $attributes['image'] = Storage::put('/public/image', \request()->image);
+        }
 
 
 
 
-        $service->save();
+        $service->update($attributes);
 
-        return redirect()->route('service', $id);
+        return redirect()->route('show-services')->with('success', 'Зміни збережені');
+
 
     }
 
-    public function deleteService($id)
+    public function delete($id)
     {
         Service::find($id)->delete();
 

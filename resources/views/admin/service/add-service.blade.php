@@ -3,110 +3,121 @@
 
     <x-page.breadcrumb title="Додати сервіс">
         <li>
-            <a href="{{url('/')}}">Головна</a>
-        </li>
-        <li>
             <a href="{{route('show-services')}}">Сервіси</a>
-        </li>
-        <li>
-            Додати сервіс
         </li>
     </x-page.breadcrumb>
 
     <!-- contact_section - start
 				================================================== -->
-    <x-page.main-admin title_page="Додати новий сервіс ">
+    <x-page.main-admin title_page="Додати новий сервіс">
 
-        <x-page.error/>
+        <form action="{{route('submit-service')}}" method="post" enctype="multipart/form-data">
 
+            @csrf
 
-            <form action="{{route('submit-service')}}" method="post" enctype="multipart/form-data">
+            <x-form.input
+                label="Найменування сервісу"
+                name="title"
+                required
+                :value="old('title')"
 
-                @csrf
+            >
+            </x-form.input>
 
-                <x-form.input
-                    label="Найменування сервісу"
-                    name="title">
-                </x-form.input>
+            <x-form.input
+                label="Посилання на сервіс"
+                name="link_to_service"
+                required
+                :value="old('link_to_service')">
+            </x-form.input>
 
-                <x-form.input
-                    label="Посилання на сервіс"
-                    name="link_to_service">
-                </x-form.input>
+            <x-form.input
+                label="Розробник"
+                name="developer"
+                required
+                :value="old('developer')">
+            </x-form.input>
 
-                <x-form.input
-                    label="Розробник"
-                    name="developer">
-                </x-form.input>
+            <x-form.input
+                label="Рік випуску"
+                name="release_date"
+                required
+                :value="old('release_date')">
+            </x-form.input>
 
-                <x-form.input
-                    label="Рік випуску"
-                    name="release_date">
-                </x-form.input>
+            <x-form.input-image
+                label="Логотип"
+                name="logo"
+                required
+                :value="old('logo')">
+            </x-form.input-image>
 
-                <x-form.input-image
-                    label="Логотип"
-                    name="logo">
-                </x-form.input-image>
+            <x-form.input-dropdown
+                name="category_id"
+                id="inputGroupSelect01"
+                label="Категорія"
+                required
+                :value="old('category_id')"
+            >
 
-                <x-form.input-dropdown
-                    name="category_id"
-                    id="inputGroupSelect01"
-                    label="Категорія"
-                >
+                @foreach ($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
 
-                    @foreach ($categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
-                    @endforeach
+            </x-form.input-dropdown>
 
-                </x-form.input-dropdown>
-
-                <x-form.input-image
-                    label="Зображення"
-                    name="image">
-                </x-form.input-image>
-
-
-                <x-form.input-text
-                    label="Короткий опис"
-                    name="excerpt"
-                    placeholder="До 140 символів">
-
-                </x-form.input-text>
-
-                <x-form.input-text
-                    class="editor"
-                    label="Повний опис"
-                    name="content"
-                >
-
-                </x-form.input-text>
-
-                <x-form.input-dropdown
-                    name="is_published"
-                    label="Опублікувати?"
-                    id="inputGroupSelect02"
-                >
-                    <option value="1">Так</option>
-                    <option value="0">Ні</option>
-                </x-form.input-dropdown>
+            <x-form.input-image
+                label="Зображення"
+                name="image"
+                required
+                :value="old('image')"
+            >
+            </x-form.input-image>
 
 
-                <div class="buttons-group d-flex justify-content-between">
-                    <x-form.a-white
-                        name="Назад"
-                        href="{{route('show-services')}}">
-                    </x-form.a-white>
-                    <x-form.submit name="Додати"></x-form.submit>
-                </div>
+            <x-form.input-text
+                label="Короткий опис"
+                name="excerpt"
+                placeholder="До 140 символів"
+                required
+                :value="old('excerpt')"
+            >
 
+            </x-form.input-text>
 
+            <x-form.input-text
+                class="editor"
+                label="Повний опис"
+                name="main_content"
+                required
+                :value="old('main_content')"
+            >
 
-                </form>
+            </x-form.input-text>
+
+            <x-form.input-dropdown
+                name="is_published"
+                label="Опублікувати?"
+                id="inputGroupSelect02"
+                required
+                :value="old('is_published')"
+            >
+                <option value="1">Так</option>
+                <option value="0">Ні</option>
+            </x-form.input-dropdown>
+
+            <x-form.buttons-container>
+                <x-form.a-white
+                    href="{{route('show-services')}}"
+                    name="Назад"/>
+
+                <x-form.submit
+                    name="Додати"/>
+            </x-form.buttons-container>
+
+        </form>
 
     </x-page.main-admin>
-    <!-- contact_section - end
-    ================================================== -->
 
 </x-layout>
 

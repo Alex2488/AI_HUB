@@ -9,7 +9,13 @@
             </h1>
             <div class="breadcrumb_nav ul_li_center">
                 <ul class="clearfix">
+                    <li>
+                        <a href="{{url('/')}}">Головна</a>
+                    </li>
                     {{ $slot }}
+                    <li>
+                        {{$title}}
+                    </li>
                 </ul>
             </div>
         </div>

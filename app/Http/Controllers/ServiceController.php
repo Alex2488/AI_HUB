@@ -24,7 +24,7 @@ class ServiceController extends Controller
 
         return view('services.services', [
             'services' => Service::latest()->filter(\request(['search', 'category']))
-                ->paginate(1)->withQueryString(),
+                ->paginate(10)->withQueryString(),
             'categories' => Category::all(),
 
         ]);

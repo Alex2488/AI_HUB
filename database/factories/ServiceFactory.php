@@ -17,22 +17,17 @@ class ServiceFactory extends Factory
     public function definition(): array
     {
         return [
-            'slug' => $this->faker->unique()->slug(),
             'title' => $this->faker->unique()->title(),
-            'logo_link'=>$this->faker->imageUrl(),
+            'slug' => $this->faker->unique()->slug(),
+            'logo'=>$this->faker->imageUrl(),
+            'image'=>$this->faker->imageUrl(),
             'link_to_service'=>$this->faker->url(),
             'category_id'=>CategoryFactory::factory(),
             'excerpt'=>$this->faker->words(),
-            'information_1'=>$this->faker->paragraph(),
-            'information_2'=>$this->faker->paragraph(),
-            'information_3'=>$this->faker->paragraph(),
-            'functionality_1'=>$this->faker->paragraph(),
-            'functionality_2'=>$this->faker->paragraph(),
-            'functionality_3'=>$this->faker->paragraph(),
-            'functionality_4'=>$this->faker->paragraph(),
-            'benefits_1'=>$this->faker->paragraph(),
-            'benefits_2'=>$this->faker->paragraph(),
-            'benefits_3'=>$this->faker->paragraph(),
+            'content'=>$this->faker->paragraph(),
+            'developer'=>$this->faker->company(),
+            'release_date'=>$this->faker->year(),
+            'is_published'=>'1',
         ];
     }
 }

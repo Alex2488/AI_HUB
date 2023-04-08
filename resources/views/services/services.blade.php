@@ -5,7 +5,7 @@
         <div class="container">
             <div class="breadcrumb_content text-center decrease_size" data-aos="fade-up" data-aos-delay="100">
                 <h1 class="page_title mb-30">
-                    Всі AI сервіси
+                    Каталог AI сервісів
                 </h1>
                 <div class="breadcrumb_nav ul_li_center">
                     <ul class="clearfix">
@@ -13,7 +13,7 @@
                             <a href="{{url('/')}}">Головна</a>
                         </li>
                         <li>
-                            Всі AI сервіси
+                            Каталог AI сервісів
                         </li>
                     </ul>
                 </div>
@@ -32,11 +32,35 @@
             ================================================== -->
     <section id="job_section" class="job_section sec_ptb_120 bg_gray clearfix">
         <div class="container">
-
-            <div class="section_title decrease_size mb-30  d-flex justify-content-between" data-aos="fade-up"
-                 data-aos-delay="100">
-                <h2 class=" title_text mb-0">AI сервіси</h2>
+            <div class="filter_bar mb-4 clearfix">
+                <div class="d-flex justify-content-between">
+                    <h2 class="title_text mb-0">Пошук AI сервісу</h2>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class="btns_group ul_li_right">
+                            <ul class="clearfix">
+                                <li><span>Sort by</span></li>
+                                <li>
+                                    <div class="form_item dropdown mb-0">
+                                        <button class="" type="button" id="filter_dropdown" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                            Default Sorting
+                                        </button>
+                                        <div class="dropdown-menu h-auto ul_li_block"
+                                             aria-labelledby="filter_dropdown">
+                                            <ul class="clearfix">
+                                                <li><a href="#!">Option 1</a></li>
+                                                <li><a href="#!">Option 2</a></li>
+                                                <li><a href="#!">Option 3</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="sidebar_section mb-4">
                 <div class="widget sidebar_search form_item" data-aos="fade-up" data-aos-delay="300">
                     {{--                    {{dd(request())}}--}}
@@ -50,51 +74,13 @@
                         @if (\request('search'))
                             <input type="search" name="search" value="{{request('search')}}">
                         @else
-                            <input type="search" name="search" placeholder="Пошук...">
+                            <input type="search" name="search" placeholder="Введіть запит">
                         @endif
                         <button type="submit"><i class="ti-search"></i></button>
                     </form>
                 </div>
             </div>
 
-            <div class="shop_section" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="filter_bar mb-50 clearfix">
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="search_result">
-                                <p class="mb-0">Showing 1–14 of 22 results</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <div class="btns_group ul_li_right">
-                                <ul class="clearfix">
-                                    <li><span>Sort by</span></li>
-                                    <li>
-                                        <div class="form_item dropdown mb-0">
-                                            <button class="" type="button" id="filter_dropdown" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false">
-                                                Default Sorting
-                                            </button>
-                                            <div class="dropdown-menu h-auto ul_li_block"
-                                                 aria-labelledby="filter_dropdown">
-                                                <ul class="clearfix">
-                                                    <li><a href="#!">Option 1</a></li>
-                                                    <li><a href="#!">Option 2</a></li>
-                                                    <li><a href="#!">Option 3</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
 
             <x-category-btn>
                 <x-category-btn-item
@@ -111,17 +97,21 @@
 
                         active="{{request()->is('/?category=' . $category->slug)}}"
                     >
-                            {{$category->name}}
+                        {{$category->name}}
                     </x-category-btn-item>
-
 
                 @endforeach
 
             </x-category-btn>
             <div class="jobs_grid element_grid position-relative">
 
-                @if($services->count())
-                    @foreach($services as $service)
+                @if(! $services->count())
+                    <p class="text-center" data-aos="fade-up" data-aos-delay="100">За вашим запитом сервісів не
+                        знайдено</p>
+                @endif
+
+                @foreach($services as $service)
+                    @if($service->is_published)
                         <div class="element-item category-{{$service -> category_id}}"
                              data-category="category-{{$service -> category_id}}">
                             <div data-aos="fade-up" data-aos-delay="300">
@@ -144,16 +134,10 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-
-                    {{$services->links()}}
-                @else
-                    <p class="text-center" data-aos="fade-up" data-aos-delay="100">За вашим запитом сервісів не знайдено</p>
-                @endif
-
-
+                    @endif
+                @endforeach
+                {{$services->links()}}
             </div>
-
         </div>
     </section>
     <!-- job_section - end
