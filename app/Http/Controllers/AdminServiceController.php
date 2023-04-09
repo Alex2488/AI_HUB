@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ServiceRequest;
 use App\Models\Category;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -82,16 +83,16 @@ class AdminServiceController extends Controller
     }
 
 
-    public function update(Service $service)
+    public function update($id, ServiceRequest $request)
     {
 
 //        $service = Service::find($id);
 //
 //        $logoImage = $r->logo;
-//        $logoPath = Storage::put('/public/image', $logoImage);
+//        $logoPath = Storage::put("/public/storage/{$service->slug}", $logoImage);
 //
 //        $image = $r->image;
-//        $imagePath = Storage::put('public/image', $image );
+//        $imagePath = Storage::put("/public/storage/{$service->slug}", $image );
 //
 //
 //
@@ -115,20 +116,24 @@ class AdminServiceController extends Controller
             'link_to_service' => 'required',
             'slug' => ['required', Rule::unique('services', 'id')->ignore($service->slug)],
             'excerpt' => 'required',
+            'image' => 'required',
+            'logo' => 'required',
             'main_content' => 'required',
             'developer' => 'required',
             'release_date' => 'required',
             'is_published' => 'required',
             'category_id' => ['required', Rule::exists('categories', 'id')],
+
         ]);
 
-        if (isset($attributes['logo'])){
-            $attributes['logo'] = Storage::put('/public/image', \request()->logo);
-        }
 
-        if (isset($attributes['image'])){
-            $attributes['image'] = Storage::put('/public/image', \request()->image);
-        }
+
+
+//        $attributes['logo'] = Storage::put('/public/storage/image', $service->logo);
+//        $attributes['image'] = Storage::put('/public/storage/image', $service->image);
+       $attributes['logo'] = \request()->file('logo')->store('logo');
+       $attributes['image'] = \request()->file('image')->store('image');
+
 
 
 

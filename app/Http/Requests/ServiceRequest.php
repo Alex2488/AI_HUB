@@ -27,7 +27,6 @@ class ServiceRequest extends FormRequest
             'excerpt' => 'required',
             'logo' => 'required|file',
             'image' => 'required|file',
-
         ];
     }
 

@@ -10,7 +10,7 @@
 				================================================== -->
     <x-page.main-admin title="Редагувати сервіс {{$service->title}} ">
 
-        <form action="{{ route('update-service', $service->slug )}}" method="path" enctype="multipart/form-data">
+        <form action="{{ route('update-service', $service->id )}}" method="post" enctype="multipart/form-data">
 
             @csrf
             @method('patch')
@@ -102,13 +102,20 @@
                 <option value="0" {{$service->is_published ? '' : 'selected'}}>Ні</option>
             </x-form.input-dropdown>
 
-            <div class="buttons-group d-flex justify-content-between">
+
+            <x-form.buttons-container>
                 <x-form.a-white
+                    href="{{route('show-services')}}"
                     name="Назад"
-                    href="{{route('show-services')}}">
+                >
                 </x-form.a-white>
-                <x-form.submit name="Зберегти зміни"></x-form.submit>
-            </div>
+
+                <x-form.submit
+                    name="Зберегти"
+                >
+                </x-form.submit>
+            </x-form.buttons-container>
+
 
         </form>
     </x-page.main-admin>

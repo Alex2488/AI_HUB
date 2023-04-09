@@ -109,16 +109,17 @@
             <x-form.buttons-container>
                 <x-form.a-white
                     href="{{route('show-services')}}"
-                    name="Назад"/>
+                    name="Назад"
+                >
+                </x-form.a-white>
 
                 <x-form.submit
-                    name="Додати"/>
+                    name="Додати"
+                >
+                </x-form.submit>
             </x-form.buttons-container>
-
         </form>
-
     </x-page.main-admin>
-
 </x-layout>
 
 

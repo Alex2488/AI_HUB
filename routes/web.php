@@ -56,7 +56,7 @@ Route::group(['prefix' => 'admin',  'middleware' => 'admin'], function()
         Route::get('add-service', 'showCreate')->name('add-service');
         Route::post('add-service/submit-service', 'create')->name('submit-service');
         Route::get('services/{service:slug}/edit', 'showEdit')->name('edit-service');
-        // patch? post?
+        // patch post
         Route::get('services/{service:slug}/update', 'update')->name('update-service');
         Route::delete('services/{service:slug}', 'delete')->name('delete-service');
     });
