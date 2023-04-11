@@ -385,7 +385,7 @@
 		margin-top: 40px;
 		.post_date {
 			min-width: 65px;
-			min-height: 60px;
+			min-height: 40px;
 			padding: 12px 10px;
 			strong {
 				font-size: 24px;
@@ -398,6 +398,8 @@
 
 		.item_image {
 			margin-bottom: 20px;
+
+
 		}
 
 		.item_title {
@@ -416,6 +418,7 @@
 				line-height: 62px;
 				animation: ripple_2 2s linear infinite;
 			}
+
 		}
 	}
 
@@ -813,6 +816,9 @@
 		}
 	}
 }
+
+
+
 /* review section - end
 ================================================== */
 

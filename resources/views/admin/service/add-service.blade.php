@@ -10,15 +10,24 @@
     <!-- contact_section - start
 				================================================== -->
     <x-page.main-admin title_page="Додати новий сервіс">
-
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{route('submit-service')}}" method="post" enctype="multipart/form-data">
 
             @csrf
 
+
+
             <x-form.input
                 label="Найменування сервісу"
                 name="title"
-                required
                 :value="old('title')"
 
             >
@@ -27,28 +36,24 @@
             <x-form.input
                 label="Посилання на сервіс"
                 name="link_to_service"
-                required
                 :value="old('link_to_service')">
             </x-form.input>
 
             <x-form.input
                 label="Розробник"
                 name="developer"
-                required
                 :value="old('developer')">
             </x-form.input>
 
             <x-form.input
                 label="Рік випуску"
                 name="release_date"
-                required
                 :value="old('release_date')">
             </x-form.input>
 
             <x-form.input-image
                 label="Логотип"
                 name="logo"
-                required
                 :value="old('logo')">
             </x-form.input-image>
 
@@ -56,7 +61,6 @@
                 name="category_id"
                 id="inputGroupSelect01"
                 label="Категорія"
-                required
                 :value="old('category_id')"
             >
 
@@ -69,7 +73,6 @@
             <x-form.input-image
                 label="Зображення"
                 name="image"
-                required
                 :value="old('image')"
             >
             </x-form.input-image>
@@ -79,7 +82,6 @@
                 label="Короткий опис"
                 name="excerpt"
                 placeholder="До 140 символів"
-                required
                 :value="old('excerpt')"
             >
 
@@ -89,7 +91,6 @@
                 class="editor"
                 label="Повний опис"
                 name="main_content"
-                required
                 :value="old('main_content')"
             >
 
@@ -99,7 +100,6 @@
                 name="is_published"
                 label="Опублікувати?"
                 id="inputGroupSelect02"
-                required
                 :value="old('is_published')"
             >
                 <option value="1">Так</option>

@@ -31,13 +31,6 @@ class Service extends Model
             $query->whereHas('category', fn ($query) =>
                 $query->where('slug', $category))
 
-
-
-//                ->whereExists(fn($query)  =>
-//                $query->from('categories')
-//                    ->whereColumn ('categories.id', 'services.category_id')
-//                    ->where ('categories.slug', $category)
-//                );
         );
 
     }

@@ -52,7 +52,6 @@
                                     name="email"
                                     value="{{old('email')}}"
                                     placeholder="example@ai-hub.co.ua"
-                                    required
                                 >
                                 @error('email')
                                 <p class="text-danger mt-1"> {{$message}}</p>
@@ -65,7 +64,6 @@
                                     type="password"
                                     name="password"
                                     placeholder="**********"
-                                    required
                                 >
                                 @error('password')
                                 <p class="text-danger mt-1"> {{$message}}</p>

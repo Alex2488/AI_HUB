@@ -11,7 +11,7 @@
                             <h2 class="title_text mb-30">{{$title}}</h2>
                         </div>
                     @endif
-                    <x-page.error/>
+
 
 
                     {{$slot}}

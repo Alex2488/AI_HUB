@@ -12,4 +12,8 @@
         <input type="file" class="custom-file-input" name="{{$name}}" >
         <label class="custom-file-label">Завантажити</label>
     </div>
+    <x-page.error
+        name="{{$name}}"
+    >
+    </x-page.error>
 </div>

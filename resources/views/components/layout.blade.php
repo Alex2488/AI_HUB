@@ -60,7 +60,7 @@
 
 
                             <li class="menu_item_has_child">
-                                <a href="{{url('blog')}}">Блог</a>
+                                <a href="{{url('posts')}}">Блог</a>
 
                             </li>
 

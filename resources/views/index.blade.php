@@ -10,24 +10,10 @@
                         <div class="big_image">
                             <div class="layer" data-depth="0.2">
                                 <div data-aos="fade-up" data-aos-delay="300">
-                                    <img src="{{url('/')}}/assets/images/robot-main-3-bg.png" alt="image_not_found">
+{{--                                    <img src="{{url('/')}}/assets/images/robot-main-3-bg.png" alt="image_not_found">--}}
                                 </div>
                             </div>
                         </div>
-                        {{--         <div class="child_image_1">
-                                     <div class="layer" data-depth="0.3">
-                                         <div data-aos="fade-up" data-aos-delay="500">
-                                             <img src="{{url('/')}}/assets/images/ai.png" alt="image_not_found">
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="child_image_2">
-                                     <div class="layer" data-depth="0.4">
-                                         <div data-aos="fade-up" data-aos-delay="700">
-                                             <img src="{{url('/')}}/assets/images/ai.png" alt="image_not_found">
-                                         </div>
-                                     </div>
-                                 </div>--}}
                     </div>
                 </div>
 
@@ -76,7 +62,7 @@
         </div>
     </section>
 
-    <section class="service_section sec_ptb_120 pb-0 clearfix">
+    <section class="service_section sec_ptb_120 mb-80 pb-0 clearfix">
         <div class="container">
 
             <div class="section_title text-center mb-30 c_slide_in">
@@ -127,6 +113,112 @@
             </div>
         </div>
     </section>
+
+
+
+        <!-- service_section - start
+                 ================================================== -->
+        <section id="feature_section" class="feature_section bg_gradient_blue sec_ptb_120 clearfix">
+            <div class="container">
+
+                <div class="section_title text-center mb-50" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="sub_title text-white mb-15">Ми найкращі</h3>
+                    <h2 class="title_text text-white mb-0">Чому обирають AI HUB</h2>
+                </div>
+
+                <div class="row mb-80">
+                    <div class="col-lg-4 col-md-4 col-sm-12" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service_boxed_1">
+                            <div class="icon_wrap">
+                                <div class="item_icon bg_gradient_blue">
+                                    <i class="icon-start-up"></i>
+                                </div>
+                                <span class="icon_deco icon_deco_1">
+											<img src="assets/images/shapes/shape_3.png" alt="shape_not_found">
+										</span>
+                                <span class="icon_deco icon_deco_2">
+											<img src="assets/images/shapes/shape_4.png" alt="shape_not_found">
+										</span>
+                                <span class="icon_deco icon_deco_3">
+											<img src="assets/images/shapes/shape_5.png" alt="shape_not_found">
+										</span>
+                                <span class="icon_deco icon_deco_4">
+											<img src="assets/images/shapes/shape_6.png" alt="shape_not_found">
+										</span>
+                            </div>
+                            <h3 class="item_title">
+                                <a href="{{url('allDataServices')}}">Найкращі сервіси</a>
+                            </h3>
+                            <p class="mb-50">
+                                Завдяки рейтинговій системі сервісів, ви зможете знайти для себе найкращі сервіси, порівняти і вибрати найбільш оптимальні за лічені хвилини
+                            </p>
+                            <a href="case_study_details.html" class="details_btn"><i class="icon-arrow-right-style-1"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service_boxed_1">
+                            <div class="icon_wrap">
+                                <div class="item_icon bg_gradient_green">
+                                    <i class="icon-marketing"></i>
+                                </div>
+                                <span class="icon_deco icon_deco_1">
+											<img src="assets/images/shapes/shape_3.png" alt="shape_not_found">
+										</span>
+                                <span class="icon_deco icon_deco_2">
+											<img src="assets/images/shapes/shape_4.png" alt="shape_not_found">
+										</span>
+                                <span class="icon_deco icon_deco_3">
+											<img src="assets/images/shapes/shape_5.png" alt="shape_not_found">
+										</span>
+                                <span class="icon_deco icon_deco_4">
+											<img src="assets/images/shapes/shape_6.png" alt="shape_not_found">
+										</span>
+                            </div>
+                            <h3 class="item_title">
+                                <a href="{{url('news')}}">Завжди в курсі подій</a>
+                            </h3>
+                            <p class="mb-50">
+                                На нашій сторінці новин ви отримуєте корисну інформацію про останні досягнення та дослідження, новинки та тренди у світі AI
+                            </p>
+                            <a href="{{url('news')}}" class="details_btn"><i class="icon-arrow-right-style-1"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service_boxed_1">
+                            <div class="icon_wrap">
+                                <div class="item_icon bg_gradient_orange">
+                                    <i class="icon-paper-plane"></i>
+                                </div>
+                                <span class="icon_deco icon_deco_1">
+											<img src="assets/images/shapes/shape_3.png" alt="shape_not_found">
+										</span>
+                                <span class="icon_deco icon_deco_2">
+											<img src="assets/images/shapes/shape_4.png" alt="shape_not_found">
+										</span>
+                                <span class="icon_deco icon_deco_3">
+											<img src="assets/images/shapes/shape_5.png" alt="shape_not_found">
+										</span>
+                                <span class="icon_deco icon_deco_4">
+											<img src="assets/images/shapes/shape_6.png" alt="shape_not_found">
+										</span>
+                            </div>
+                            <h3 class="item_title">
+                                <a href="#newsletter_section">Дізнайтеся першими </a>
+                            </h3>
+                            <p class="mb-50">
+                                Отримуйте інформацію про нові сервіси, акційні пропозиції та інші важливі події першими. Лише корисна інформація стосовно AI сервісів.
+                            </p>
+                            <a href="#newsletter_section" class="details_btn"><i class="icon-arrow-right-style-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- service_section - end
+        ================================================== -->
 
     <!-- feature_section - start
 ================================================== -->

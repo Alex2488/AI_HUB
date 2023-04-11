@@ -6,7 +6,10 @@
         type="text"
         name="{{$name}}"
         value="{{$value}}"
-        required
         {{ $attributes(['value' => old($name)]) }}
     >
+    <x-page.error
+        name="{{$name}}"
+    >
+    </x-page.error>
 </div>

@@ -8,4 +8,8 @@
                 {{ $attributes }}
     >{{ old($name) ?? $slot }}
     </textarea>
+    <x-page.error
+        name="{{$name}}"
+    >
+    </x-page.error>
 </div>

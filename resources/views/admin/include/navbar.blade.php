@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 <div class="button-group filter-btns-group ul_li mb-30 d-flex justify-content-between" data-aos="fade-up" data-aos-delay="200">
     <ul id="admin-buttons" class="clearfix">
         <li >
@@ -42,8 +52,8 @@
                     active
                 @endif
             "
-               href="{{route('show-categories')}}" >
-                Blogs
+               href="{{route('show-posts')}}" >
+                Пости
             </a>
         </li>
 
@@ -62,6 +72,10 @@
             @elseif(Route::is('show-categories'))
                 <a href="{{route('add-category')}}" class="btn-primary px-3 py-2 rounded mr-2">
                     Нова категорія
+                </a>
+            @elseif(Route::is('show-posts'))
+                <a href="{{route('add-post')}}" class="btn-primary px-3 py-2 rounded mr-2">
+                    Новий пост
                 </a>
             @endif
 

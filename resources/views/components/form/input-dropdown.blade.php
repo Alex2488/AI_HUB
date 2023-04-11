@@ -9,4 +9,8 @@
             {{$slot}}
         </select>
     </div>
+    <x-page.error
+        name="{{$name}}"
+    >
+    </x-page.error>
 </div>

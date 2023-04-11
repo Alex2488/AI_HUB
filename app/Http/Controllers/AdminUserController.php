@@ -2,27 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminUserController extends Controller
 {
-    public function showUsers () {
+    public function index () {
         $users = User::all();
         return view('admin.user.show_users', compact('users'));
     }
 
-    public function showEditUser ($id) {
+    public function edit ($id) {
         $user = User::find($id);
         return view('admin.user.edit_user', compact('user'));
     }
 
-    public function updateUser($id, Request $r)
+    public function update($id, UserRequest $request)
     {
         $user = User::find($id);
-        $user->name = $r->name;
-        $user->email = $r->email;
-        $user->role = $r->role;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->role = $request->role;
 
         $user->save();
 
@@ -30,7 +31,7 @@ class AdminUserController extends Controller
         return view('admin.user.show_users', compact('users'));
     }
 
-    public function deleteUser ($id) {
+    public function delete ($id) {
 
 
         User::find($id)->delete();

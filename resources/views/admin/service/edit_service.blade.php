@@ -10,10 +10,10 @@
 				================================================== -->
     <x-page.main-admin title="Редагувати сервіс {{$service->title}} ">
 
-        <form action="{{ route('update-service', $service->id )}}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('update-service', $service->id )}}" method="POST" enctype="multipart/form-data">
 
             @csrf
-            @method('patch')
+
 
             <x-form.input
                 label="Найменування сервісу"
