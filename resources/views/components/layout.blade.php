@@ -58,7 +58,6 @@
                             </li>
 
 
-
                             <li class="menu_item_has_child">
                                 <a href="{{url('posts')}}">Блог</a>
 
@@ -67,30 +66,49 @@
                             <li class="menu_item_has_child">
                                 <a href="{{url('about')}}">Про нас</a>
                             </li>
-                            <li class="menu_item_has_child">
-                            @if (auth()->user())
-
-                                        <a href="#">{{auth()->user()->name}}</a>
-
-                                @endif
-                            </li>
-
-
-
-
-
-
-{{--                            @if (auth()->user()->role === 1)--}}
-
 
                             @if (auth()->user()?->role === 1)
-                            <li class="menu_item_has_child">
-                                <a href="{{route('show-services')}}">admin</a>
+                                <li class="menu_item_has_child">
+                                    <a href="{{route('show-services')}}">admin</a>
 
-                            </li>
+                                </li>
                             @endif
 
-{{--                            @endif--}}
+
+                            @if (auth()->user())
+                                <li class="menu_item_has_child">
+                                    <a href="#">Вітаємо, {{auth()->user()->name}}</a>
+                                    <ul class="submenu">
+                                        <li><a href="gallery_fullimage_2_column.html">Grid (2 Column)</a></li>
+                                        <li><a href="gallery_fullimage_3_column.html">Grid (3 Column)</a></li>
+                                        <li><a href="gallery_fullimage_4_column.html">Grid (4 Column)</a></li>
+
+                                        <li><a href="gallery_fullimage_fullwidth_3_column.html">Full Width (3
+                                                Column)</a></li>
+                                        <li><a href="gallery_fullimage_fullwidth_4_column.html">Full Width (4
+                                                Column)</a></li>
+
+                                        <li><a href="gallery_fullimage_masonry_2_column.html">Masonry (2 Column)</a>
+                                        </li>
+                                        <li><a href="gallery_fullimage_masonry_3_column.html">Masonry (3 Column)</a>
+                                        </li>
+                                        <li><a href="gallery_fullimage_masonry_4_column.html">Masonry (4 Column)</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @endif
+
+
+
+
+
+
+                            {{--                            @if (auth()->user()->role === 1)--}}
+
+
+
+
+                            {{--                            @endif--}}
                         </ul>
                     </nav>
                 </div>

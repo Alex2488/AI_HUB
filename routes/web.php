@@ -66,6 +66,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::delete('delete-category/{category:id}', [\App\Http\Controllers\AdminCategoryController::class, 'deleteCategory'])->name('delete-category');
     });
 
+    Route::controller(\App\Http\Controllers\AdminTagController::class)->group(function () {
+        Route::get('show-tags', 'showTags')->name('show-tags');
+        Route::get('add-tag', 'showAddTag')->name('add-tag');
+        Route::post('add-tag/submit-tag', 'addTag')->name('submit-tag');
+        Route::get('edit-tag/{tag:id}', 'showEditTag')->name('edit-tag');
+        Route::post('edit-tag/{tag:id}/update-tag', 'updateTag')->name('update-tag');
+        Route::delete('delete-tag/{tag:id}', 'deleteTag')->name('delete-tag');
+    });
+
 });
 
 Route::get('/email/verify', function () {

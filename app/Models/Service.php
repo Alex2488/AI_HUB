@@ -18,6 +18,8 @@ class Service extends Model
 
     public function scopeFilter ($query, array $filters) {
 
+
+
         $query -> when($filters['search'] ?? false, fn ($query, $search) =>
             $query->where(fn($query)=>
                 $query
@@ -30,6 +32,12 @@ class Service extends Model
         $query -> when($filters['category'] ?? false, fn ($query, $category) =>
             $query->whereHas('category', fn ($query) =>
                 $query->where('slug', $category))
+
+        );
+
+        $query -> when($filters['tags'] ?? false, fn ($query, $tags) =>
+            $query->whereHas('tags', fn ($query) =>
+                $query->where('slug', $tags))
 
         );
 
@@ -48,6 +56,10 @@ class Service extends Model
 
     public function likedUsers() {
         return $this->belongsToMany(User::class, 'service_user_likes', 'service_id', 'user_id');
+    }
+
+    public function tags () {
+        return $this->belongsToMany(Tag::class, 'service_tag');
     }
 
 

@@ -104,3 +104,8 @@ slides.style.transform = `translateX(-${currentIndex * 100}%)`;
     });
 </script>
 
+
+<script src="{{url('/')}}/assets/js/droplist.js"></script>
+
+
+

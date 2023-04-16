@@ -42,8 +42,8 @@
                     active
                 @endif
             "
-               href="{{route('show-categories')}}" >
-                Tags
+               href="{{route('show-tags')}}" >
+                Теги
             </a>
         </li>
         <li>
@@ -76,6 +76,10 @@
             @elseif(Route::is('show-posts'))
                 <a href="{{route('add-post')}}" class="btn-primary px-3 py-2 rounded mr-2">
                     Новий пост
+                </a>
+            @elseif(Route::is('show-tags'))
+                <a href="{{route('add-tag')}}" class="btn-primary px-3 py-2 rounded mr-2">
+                    Новий тег
                 </a>
             @endif
 

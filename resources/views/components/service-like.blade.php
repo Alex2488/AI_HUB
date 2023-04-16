@@ -21,7 +21,10 @@
 
         @endauth
     @else
-        <div class="heart_btn h-100 d-flex align-items-center">
+        <div class="heart_btn h-100 d-flex align-items-center"
+             data-toggle="tooltip"
+             data-placement="top"
+             data-title="Необхідно авторизуватись">
             <i class="far fa-heart mr-1"></i>
             <span class="ml-2">{{$service->liked_users_count}}</span>
         </div>

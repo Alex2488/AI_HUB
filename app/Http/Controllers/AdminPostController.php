@@ -69,7 +69,7 @@ class AdminPostController extends Controller
 
     public function delete($id)
     {
-        Service::find($id)->delete();
+        Post::find($id)->delete();
         return back();
     }
 }

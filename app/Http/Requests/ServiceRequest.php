@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Service;
+use http\Env\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
 
@@ -24,8 +24,10 @@ class ServiceRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
-    public function rules(?Service $service = null): array
+    public function rules(\Illuminate\Http\Request $request): array
     {
+
+
         return [
             'title' => 'required|string|max:255',
             'slug' =>  (Route::is('submit-service')) ? ['string', 'max:255'] : ['string', 'max:255', 'required'],
@@ -37,6 +39,7 @@ class ServiceRequest extends FormRequest
             'developer' => 'required|string|max:255',
             'is_published' => 'required|numeric|max:1',
             'category_id' => ['required', Rule::exists('categories', 'id')],
+            'tags' => 'required',
         ];
     }
 
@@ -47,6 +50,7 @@ class ServiceRequest extends FormRequest
             'title.max' => "Назва не може бути довше 255 символів",
             'slug.required' => "Не зазначено URL строку",
             'slug.max' => "URL строка не може бути довше 255 символів",
+            'slug.unique' => "URL строка вже існує",
             'link_to_service.required' => "Не зазначено посилання на сервіс",
             'link_to_service.max' => "Посилання не сервіс не може бути довше 255 символів",
             'excerpt.required' => "Не зазначено короткий опис",

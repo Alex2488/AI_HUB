@@ -28,9 +28,7 @@
             <x-form.input
                 label="Найменування сервісу"
                 name="title"
-                :value="old('title')"
-
-            >
+                :value="old('title')">
             </x-form.input>
 
             <x-form.input
@@ -69,6 +67,20 @@
                 @endforeach
 
             </x-form.input-dropdown>
+
+
+
+            <x-form.input-dropdown-tags
+                name="tags[]"
+                label="Теги"
+                :value="old('tags[]')"
+            >
+                @foreach($tags as $tag)
+                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                @endforeach
+            </x-form.input-dropdown-tags>
+
+
 
             <x-form.input-image
                 label="Зображення"

@@ -17,7 +17,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{route('add-service')}}" class="btn btn_border mb-3">
+            <a href="{{route('show-tags')}}" class="btn btn_border mb-3">
                 Теги
             </a>
         </li>

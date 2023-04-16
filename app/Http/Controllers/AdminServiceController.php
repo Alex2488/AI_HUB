@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ServiceRequest;
 use App\Models\Category;
 use App\Models\Service;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -14,20 +15,26 @@ class AdminServiceController extends Controller
 
     public function index()
     {
+
+
         $services = Service::all();
         $categories = Category::all();
-        return view('admin.service.show_services', compact('services', 'categories'));
+        $tags = Tag::all();
+        return view('admin.service.show_services', compact('services', 'categories', 'tags'));
     }
 
 
     public function create()
     {
         $categories = Category::all();
-        return view('admin.service.add-service', compact('categories'));
+        $tags = Tag::all()->sortBy('name');
+
+        return view('admin.service.add-service', compact('categories', 'tags'));
     }
 
     public function store(ServiceRequest $request)
     {
+
         $logoImage = $request->logo;
         $logoPath = Storage::put('/public/image', $logoImage);
 
@@ -49,6 +56,8 @@ class AdminServiceController extends Controller
 
         $service->save();
 
+        $service->tags()->sync($request->tags, false);
+
         return redirect()->route('show-services')->with('success', 'Новий сервіс збережено');
     }
 
@@ -56,7 +65,8 @@ class AdminServiceController extends Controller
     {
         $service = Service::find($id);
         $categories = Category::all();
-        return view('admin.service.edit_service', compact('service', 'categories'));
+        $tags = Tag::all();
+        return view('admin.service.edit_service', compact('service', 'categories', 'tags'));
     }
 
     public function update($id, ServiceRequest $request)
@@ -86,6 +96,9 @@ class AdminServiceController extends Controller
         $service->category_id = $request->category_id;
 
         $service->save();
+
+        $service->tags()->sync($request->tags, true);
+
 
         return redirect()->route('show-services')->with('success', 'Зміни збережені');
     }

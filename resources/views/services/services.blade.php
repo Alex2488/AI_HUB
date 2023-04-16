@@ -93,7 +93,7 @@
                 @foreach($categories as $category)
 
                     <x-category-btn-item
-                        href="{{route('services') . '/?category=' . $category->slug}}&{{http_build_query(request()->except('category'))}}"
+                        href="{{route('services') . '/?category=' . $category->slug}}&{{http_build_query(request()->except('category'))}}&{{http_build_query(request()->except('tags'))}}"
 
                         active="{{request()->is('/?category=' . $category->slug)}}"
                     >

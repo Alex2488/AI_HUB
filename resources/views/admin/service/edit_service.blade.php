@@ -2,7 +2,7 @@
 
     <x-page.breadcrumb title="Редагувати сервіс">
         <li>
-            <a href="{{route('show-services')}}">Сервіси</a>
+{{--            <a href="{{route('show-services')}}">Сервіси</a>--}}
         </li>
     </x-page.breadcrumb>
 
@@ -74,6 +74,20 @@
                 @endforeach
 
             </x-form.input-dropdown>
+
+            <x-form.input-dropdown-tags
+                name="tags[]"
+                label="Теги"
+                :value="old('tags[]')"
+            >
+                @foreach($tags as $tag)
+                    <option value="{{$tag->id}}"
+                        @foreach($service->tags as $service_tag)
+                            {{$tag->id === $service_tag->id ? 'selected' : ''}}
+                        @endforeach
+                    >{{$tag->name}}</option>
+                @endforeach
+            </x-form.input-dropdown-tags>
 
             <x-form.input-image
                 label="Завантажити зображення"
