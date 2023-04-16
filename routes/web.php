@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::controller(\App\Http\Controllers\PageController::class)->group(function () {
-    Route::get('/', 'index')->name('home')->middleware(['verified']);
+    Route::get('/', 'index')->name('home');
     Route::get('services', 'showServices')->name('services');
     Route::get('services/{service:slug}', 'showService')->name('show-service');
     Route::get('posts', 'showPosts')->name('posts');
@@ -36,7 +36,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('add-service', 'create')->name('add-service');
         Route::post('add-service/submit-service', 'store')->name('submit-service');
         Route::get('services/{service:slug}/edit', 'edit')->name('edit-service');
-        // patch post
         Route::post('services/{service:slug}/update', 'update')->name('update-service');
         Route::delete('services/{service:slug}', 'delete')->name('delete-service');
     });
@@ -46,7 +45,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('add-post', 'create')->name('add-post');
         Route::post('add-post/submit-post', 'store')->name('submit-post');
         Route::get('posts/{post:slug}/edit', 'edit')->name('edit-post');
-        // patch post
         Route::post('posts/{post:slug}/update', 'update')->name('update-post');
         Route::delete('posts/{post:slug}', 'delete')->name('delete-post');
     });
@@ -64,8 +62,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('add-category', [\App\Http\Controllers\AdminCategoryController::class, 'showAddCategory'])->name('add-category');
         Route::post('add-category/submit-category', [\App\Http\Controllers\AdminCategoryController::class, 'addCategory'])->name('submit-category');
         Route::get('edit-category/{category:id}', [\App\Http\Controllers\AdminCategoryController::class, 'showEditCategory'])->name('edit-category');
-        // patch? post?
-        Route::get('edit-category/{category:id}/update-category', [\App\Http\Controllers\AdminCategoryController::class, 'updateCategory'])->name('update-category');
+        Route::post('edit-category/{category:id}/update-category', [\App\Http\Controllers\AdminCategoryController::class, 'updateCategory'])->name('update-category');
         Route::delete('delete-category/{category:id}', [\App\Http\Controllers\AdminCategoryController::class, 'deleteCategory'])->name('delete-category');
     });
 

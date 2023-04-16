@@ -8,7 +8,7 @@
 
     <x-page.main-admin title="Редагувати категорію">
 
-        <form action="{{route('update-category', $category)}}" method="patch" >
+        <form action="{{route('update-category', $category)}}" method="post" >
             @csrf
             <x-form.input name="name"
                           label="Назва категорії"

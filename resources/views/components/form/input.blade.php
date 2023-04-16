@@ -7,6 +7,7 @@
         name="{{$name}}"
         value="{{$value}}"
         {{ $attributes(['value' => old($name)]) }}
+
     >
     <x-page.error
         name="{{$name}}"

@@ -2,23 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\FilterRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Service;
+
+
 
 
 class PageController extends Controller
 {
     public function index()
     {
-        $services = Service::latest()->take(3)->get();
+//        $services = Service::latest()->take(3)->get();
+        $services = Service::orderBy('liked_users_count', 'desc')->take(3)->get();
         $categories = Category::all();
         return view('index', compact('services', 'categories'));
     }
 
     public function showServices()
     {
+
+
+
+
 
         return view('services.services', [
             'services' => Service::latest()->filter(\request(['search', 'category']))
@@ -36,6 +42,8 @@ class PageController extends Controller
         $services_alt = Service::where('category_id', $service->category->id)->inRandomOrder()->take(3)->get();
 
             $categories = \App\Models\Category::all();
+
+
 
             return view('services.service', compact('service', 'categories', 'services_alt'));
     }

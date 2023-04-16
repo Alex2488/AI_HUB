@@ -47,23 +47,23 @@
 
                             <div class="row mb-80">
 
-                                @foreach ($services_alt as $service)
+                                @foreach ($services_alt as $service_alt)
                                     <div class="col-lg-4 col-md-4 col-sm-6">
 
                                         <div class="blog_grid" data-aos="fade-up" data-aos-delay="100">
                                             <div class="post_date">
                                                 {{--                                            <strong>14</strong>--}}
-                                                <span>{{$service->category->name}}</span>
+                                                <span>{{$service_alt->category->name}}</span>
                                             </div>
                                             <a href="#!" class="item">
-                                                <img src="{{ url('/') . Storage::url($service->logo) }}">
+                                                <img src="{{ url('/') . Storage::url($service_alt->logo) }}">
                                             </a>
                                             <div class="item_content">
                                                 <h3 class="item_title">
-                                                    <a href="{{url('/')}}/services/{{$service -> slug}}"></a>
+                                                    <a href="{{url('/')}}/services/{{$service_alt -> slug}}"></a>
                                                 </h3>
                                                 <p class="mb-0 text-black-50 text-center">
-                                                    <strong>{{$service-> title}}</strong>
+                                                    <strong>{{$service_alt-> title}}</strong>
                                                 </p>
                                             </div>
                                         </div>
@@ -92,8 +92,13 @@
                                             <button type="submit" class="btn bg_default_blue mb-4">Відправити</button>
                                         </form>
                                     </div>
+
+
                                     @foreach ($service->comments as $comment)
-                                        <x-service-comment :comment="$comment"/>
+
+
+
+                                        <x-service-comment :comment='$comment'/>
                                     @endforeach
                                 @elseif (auth()->check() && auth()->user()->email_verified_at === null)
                                     <div class="comment_form" data-aos="fade-up" data-aos-delay="100">
