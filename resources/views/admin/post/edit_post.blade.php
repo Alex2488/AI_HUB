@@ -35,11 +35,11 @@
                 img="{{$post->image}}">
             </x-form.input-image>
 
-            <x-form.input-text
+            <x-form.input-textarea
                 label="Короткий опис"
                 name="excerpt"
             >{{old('excerpt', $post->excerpt)}}
-            </x-form.input-text>
+            </x-form.input-textarea>
 
             <x-form.input-text
                 class="editor"
@@ -47,6 +47,10 @@
                 name="main_content"
             >{{old('main_content', $post->main_content)}}
             </x-form.input-text>
+
+            <div id="editor" class="mb-4">
+                {!! isset($post->main_content) ? $post->main_content : '' !!}
+            </div>
 
             <x-form.input-dropdown
                 name="is_published"

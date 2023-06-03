@@ -5,7 +5,7 @@
     <section id="breadcrumb_section" class="breadcrumb_section bg_gradient_blue deco_wrap d-flex align-items-center text-white clearfix">
         <div class="container">
             <div class="breadcrumb_content text-center" data-aos="fade-up" data-aos-delay="100">
-                <h1 class="page_title">Авторизація</h1>
+                <h1 class="page_title">Відновлення паролю</h1>
 
             </div>
         </div>
@@ -34,16 +34,10 @@
                 </div>
 
                 <div class="col-lg-6 col-md-7 col-sm-8">
-                    <div class="section_title increase_size mb-80" data-aos="fade-up" data-aos-delay="400">
-                        <h2 class="title_text mb-30">Авторизація</h2>
-                        <p class="mb-0">
-                            Ласкаво просимо на сайті
-                            <span><a href="{{url('/')}}">AI HUB!</a></span>
-                        </p>
-                    </div>
+
 
                     <div class="signin_form" data-aos="fade-up" data-aos-delay="500">
-                        <form method="post" action="{{url('/login')}}">
+                        <form method="post" action="{{route('password.email')}}">
                             @csrf
                             <div class="form_item">
                                 <h4 class="input_title">Адреса електронної пошти</h4>
@@ -58,36 +52,13 @@
                                 @enderror
                             </div>
 
-                            <div class="form_item">
-                                <h4 class="input_title">Пароль</h4>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    placeholder="**********"
-                                >
-                                @error('password')
-                                <p class="text-danger mt-1"> {{$message}}</p>
-                                @enderror
+
+                            <button type="submit" class="btn bg_default_blue mb-30">Відправити</button>
+
+                            <div class="d-flex justify-content-between align-items-center mb-0">
+                                 <a href="{{route('register')}}"><u>Зареєструватись</u></a>
+                                 <a href="{{route('login')}}"><u>Авторизуватись</u></a>
                             </div>
-
-                            <div class="row mb-50">
-                                <div class="col-6">
-                                    <div class="check_box">
-                                        <input id="remember_btn" type="checkbox">
-                                        <label for="remember_btn">Запам'ятати мене</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-6">
-                                    <a href="{{route('password.request')}}" class="forget_btn">Забули пароль?</a>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn bg_default_blue mb-30">Увійти на сайт</button>
-
-                            <p class="mb-0 text-center">
-                                Вперший раз на сайті? <a href="{{route('register')}}"><u>Зареєструватись</u></a>
-                            </p>
 
                         </form>
                     </div>

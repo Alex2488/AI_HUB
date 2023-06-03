@@ -30,6 +30,9 @@
 
 <link rel="stylesheet" href="{{url('/')}}/assets/css/droplist.css">
 
+<!-- Include stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
 
 
 

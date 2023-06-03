@@ -90,14 +90,14 @@
             </x-form.input-image>
 
 
-            <x-form.input-text
+            <x-form.input-textarea
                 label="Короткий опис"
                 name="excerpt"
                 placeholder="До 140 символів"
                 :value="old('excerpt')"
             >
 
-            </x-form.input-text>
+            </x-form.input-textarea>
 
             <x-form.input-text
                 class="editor"
@@ -107,6 +107,10 @@
             >
 
             </x-form.input-text>
+
+            <div id="editor">
+
+            </div>
 
             <x-form.input-dropdown
                 name="is_published"

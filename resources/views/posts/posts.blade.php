@@ -16,10 +16,6 @@
                             @if($post->is_published)
                         <div class="grid-item">
                             <div class="blog_grid decrease_size" data-aos="fade-up" data-aos-delay="100">
-                                <div class="post_date">
-                                    <strong>14</strong>
-                                    <span>Jan</span>
-                                </div>
                                 <a href="{{url('/')}}/posts/{{$post -> slug}}" class="item_image">
                                     <img src="{{ url('/') . Storage::url($post->image) }}" alt="image_not_found">
                                 </a>
@@ -34,26 +30,17 @@
                                         <div class="col-6">
                                             <a href="{{url('/')}}/posts/{{$post -> slug}}" class="details_btn">Детальніше<i class="fal fa-long-arrow-right"></i></a>
                                         </div>
-                                        <div class="col-6">
-                                            <a href="{{url('/')}}/posts/{{$post -> slug}}#comments" class="comment_btn float-right"><i class="far fa-comment mr-1"></i> 03 Comments</a>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                             @endif
                         @endforeach
-
+                        {{$posts->links()}}
                     </div>
 
-                    <div class="pagination_nav ul_li" data-aos="fade-up" data-aos-delay="100">
-                        <ul class="clearfix">
-                            <li><a href="#!"><i class="ti-arrow-left"></i></a></li>
-                            <li class="active"><a href="#!">1</a></li>
-                            <li><a href="#!">2</a></li>
-                            <li><a href="#!"><i class="ti-arrow-right"></i></a></li>
-                        </ul>
-                    </div>
+
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-sm-7">

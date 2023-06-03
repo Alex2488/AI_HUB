@@ -26,7 +26,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @if ($services)
+                    @if ($services->count() === 0)
+                        <tr>
+                            <td class="text-center" colspan="8">
+                                <span class="text-center">Сервіси відсутні</span>
+                            </td>
+                        </tr>
+                    @else
                         @foreach ($services as $service)
                             <tr>
                                 <td class="text-center">
@@ -41,28 +47,20 @@
                                     <span class="text-center">{{$service->category->name}}</span>
                                 </td>
                                 <td class="text-center">
-
-
-                                        @if ($service->tags->count() !== 0)
-                                            <span class="text-center"
-                                                 data-toggle="tooltip"
-                                                 data-placement="top"
-                                                 data-title="
+                                    @if ($service->tags->count() !== 0)
+                                        <span class="text-center"
+                                              data-toggle="tooltip"
+                                              data-placement="top"
+                                              data-title="
                                                 @foreach($service->tags as $oneTag)
                                                 {{$oneTag->name}}
                                                 @endforeach
                                                 ">
                                             {{$service->tags->count()}}
                                                  </span>
-
-                                        @else
-                                            {{$service->tags->count()}}
-                                        @endif
-
-
-
-
-
+                                    @else
+                                        {{$service->tags->count()}}
+                                    @endif
                                 </td>
                                 <td class="text-center">
                                     <div class="product_quantity">
@@ -70,7 +68,6 @@
                                     </div>
                                 </td>
                                 <td class="text-center">
-
                                     <span class="text-center">{{$service->comments->count()}}</span>
                                 </td>
                                 <td class="text-center">
@@ -95,17 +92,10 @@
                                 </td>
                             </tr>
                         @endforeach
-
-                    @else
-
-                        <p>Сервіси відсутні</p>
-
                     @endif
                     </tbody>
                 </table>
             </div>
-
-
         </div>
     </section>
 

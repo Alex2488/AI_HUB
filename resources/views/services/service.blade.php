@@ -12,7 +12,7 @@
         <section class="details_section casestudy_details sec_ptb_120 pb-0 clearfix">
             <div class="container">
                 <div class="row mb-50 justify-content-lg-between justify-content-md-between justify-content-sm-center">
-                               <div class="col-lg-8 col-md-7 col-sm-12">
+                    <div class="col-lg-8 col-md-7 col-sm-12">
                         <div class="item_image mr-30" data-aos="fade-up" data-aos-delay="300">
                             <img src="{{  url('/') . Storage::url($service->image) }}" class="card-img-service"
                                  alt="image_not_found">
@@ -26,7 +26,9 @@
                                         <h6 class="widget_title mb-0">Категорія:</h6>
                                         <div class="tag_list ul_li">
                                             <ul class="clearfix d-flex">
-                                                <li class="mx-2"><a href="{{url('services')}}/?category={{$service->category->slug}}">{{$service->category->name}}</a></li>
+                                                <li class="mx-2"><a
+                                                        href="{{url('services')}}/?category={{$service->category->slug}}">{{$service->category->name}}</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -34,6 +36,10 @@
                                         <h6 class="widget_title mb-0">Посилання на сайт:</h6>
                                         <a href="{{$service->link_to_service}}"
                                            class="ml-2">{{$service->link_to_service}}</a>
+                                    </div>
+                                    <div class="row align-items-center my-4">
+                                        <h6 class="widget_title mb-0">Переглядів:</h6>
+                                        <p class="ml-2">{{$service->views()->count()}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +50,6 @@
                                         <div class="col-lg-4 col-md-4 col-sm-6">
                                             <div class="blog_grid" data-aos="fade-up" data-aos-delay="100">
                                                 <div class="post_date">
-                                                    {{--                                            <strong>14</strong>--}}
                                                     <span>{{$service_alt->category->name}}</span>
                                                 </div>
                                                 <a href="#!" class="item">

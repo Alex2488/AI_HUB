@@ -5,7 +5,7 @@
         <div class="container">
             <div class="breadcrumb_content text-center decrease_size" data-aos="fade-up" data-aos-delay="100">
                 <h1 class="page_title mb-30">
-                    Каталог AI сервісів
+                    Прокоментовані AI сервіси
                 </h1>
                 <div class="breadcrumb_nav ul_li_center">
                     <ul class="clearfix">
@@ -13,7 +13,7 @@
                             <a href="{{url('/')}}">Головна</a>
                         </li>
                         <li>
-                            Каталог AI сервісів
+                            Прокоментовані AI сервіси
                         </li>
                     </ul>
                 </div>
@@ -48,10 +48,16 @@
                                         <div class="dropdown-menu h-auto ul_li_block"
                                              aria-labelledby="filter_dropdown">
                                             <ul class="clearfix">
-                                                <li><a href="{{request()->query() ? URL::full() . '&sort=title' : URL::full() . '/?sort=title'}}">найменуванням</a></li>
-                                                <li><a href="{{request()->query() ? URL::full() . '&sort=date_up': URL::full() . '/?sort=date_up' }}">датою (зростання)</a></li>
-                                                <li><a href="{{request()->query() ? URL::full() . '&sort=date_down': URL::full() . '/?sort=date_down' }}">датою (спадання)</a></li>
-                                                <li><a href="{{request()->query() ? URL::full() . '&sort=popular': URL::full() . '/?sort=popular' }}">популярністю</a></li>
+
+
+                                                {{--                                                <li><a href="{{request()->query() ? URL::full() . '&sort=title' : URL::full() . '/?sort=title'}}">найменуванням</a></li>--}}
+                                                {{--                                                <li><a href="{{request()->query() ? URL::full() . '&sort=date_up': URL::full() . '/?sort=date_up' }}">датою (зростання)</a></li>--}}
+                                                <li>
+                                                    {{--                                                    <a href="{{request()->query() ? URL::full() . '&sort=date_down': URL::full() . '/?sort=date_down' }}">датою--}}
+                                                    {{--(спадання)</a></li>--}}
+                                                <li>
+                                                    {{--                                                    <a href="{{request()->query() ? URL::full() . '&sort=popular': URL::full() . '/?sort=popular' }}">популярністю</a>--}}
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -67,6 +73,11 @@
                     {{--                    {{dd(request())}}--}}
                     <form method="GET" action="#">
                         @csrf
+                        {{--                        @if(request('category'))--}}
+                        {{--                            <input type="hidden" name="category" value="{{request('category')}}">--}}
+                        {{--                        @endif--}}
+
+
                         @if (\request('search'))
                             <input type="search" name="search" value="{{request('search')}}">
                         @else
@@ -80,8 +91,8 @@
 
             <x-category-btn>
                 <x-category-btn-item
-                    href="{{route('services')}}"
-                    active="{{request()->routeIs('services')}}"
+                    href="{{route('favorite-services')}}"
+                    active="{{request()->routeIs('favorite-services')}}"
                 >
                     Всі категорії
                 </x-category-btn-item>
@@ -89,7 +100,7 @@
                 @foreach($categories as $category)
 
                     <x-category-btn-item
-                        href="{{route('services') . '/?category=' . $category->slug}}"
+                        href="{{route('favorite-services') . '/?category=' . $category->slug}}"
 
                         active="{{request()->is('/?category=' . $category->slug)}}"
                     >
@@ -101,39 +112,48 @@
             </x-category-btn>
             <div class="jobs_grid element_grid position-relative">
 
+
+
                 @if(! $services->count())
                     <p class="text-center" data-aos="fade-up" data-aos-delay="100">За вашим запитом сервісів не
                         знайдено</p>
                 @endif
 
+                    @if ($commentedServices->count() === 0)
+                        <p class="text-center" data-aos="fade-up" data-aos-delay="100">Відсутні коментовані сервіси</p>
+                    @endif
 
-                @foreach($services as $service)
-                    @if($service->is_published)
-                        <div class="element-item category-{{$service -> category_id}}"
-                             data-category="category-{{$service -> category_id}}">
-                            <div data-aos="fade-up" data-aos-delay="300">
-                                <div class="job_item d-flex justify-content-between align-items-center">
-                                    <div class="job_item_container">
-                                        <div class="item_icon">
-                                            <img src="{{ url('/') . Storage::url($service->logo) }}" class="px-3"
-                                                 alt="image_not_found">
+                @foreach($commentedServices as $commentedService)
+                    @foreach($services as $service)
+
+                        @if($service->id === $commentedService->service_id)
+                            <div class="element-item category-{{$service -> category_id}}"
+                                 data-category="category-{{$service -> category_id}}">
+                                <div data-aos="fade-up" data-aos-delay="300">
+                                    <div class="job_item d-flex justify-content-between align-items-center">
+                                        <div class="job_item_container">
+                                            <div class="item_icon">
+                                                <img src="{{ url('/') . Storage::url($service->logo) }}"
+                                                     class="px-3"
+                                                     alt="image_not_found">
+                                            </div>
+                                            <div class="item_content">
+                                                <h3 class="item_title"><a
+                                                        href="{{url('/')}}/services/{{$service -> slug}}">{{$service->title}}</a>
+                                                </h3>
+                                                <p class="mb-0 pr-4">{{$service -> excerpt}}</p>
+                                            </div>
                                         </div>
-                                        <div class="item_content">
-                                            <h3 class="item_title"><a
-                                                    href="{{url('/')}}/services/{{$service -> slug}}">{{$service->title}}</a>
-                                            </h3>
-                                            <p class="mb-0 pr-4">{{$service -> excerpt}}</p>
+                                        <div class="btns_group">
+                                            @include('components.service-like')
                                         </div>
-                                    </div>
-                                    <div class="btns_group">
-                                        @include('components.service-like')
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endif
+                        @endif
+                    @endforeach
                 @endforeach
-                {{$services->links()}}
+                {{--{{$services->links()}}--}}
             </div>
         </div>
     </section>

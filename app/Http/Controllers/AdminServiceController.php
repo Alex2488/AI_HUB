@@ -15,8 +15,6 @@ class AdminServiceController extends Controller
 
     public function index()
     {
-
-
         $services = Service::all();
         $categories = Category::all();
         $tags = Tag::all();
@@ -34,6 +32,7 @@ class AdminServiceController extends Controller
 
     public function store(ServiceRequest $request)
     {
+
 
         $logoImage = $request->logo;
         $logoPath = Storage::put('/public/image', $logoImage);
@@ -71,6 +70,7 @@ class AdminServiceController extends Controller
 
     public function update($id, ServiceRequest $request)
     {
+
         $service = Service::find($id);
 
         if ($request->logo) {
@@ -84,6 +84,7 @@ class AdminServiceController extends Controller
             $imagePath = Storage::put("/public/image", $image);
             $service->image = $imagePath;
         }
+
 
         $service->title = $request->title;
         $service->slug = $request->slug;

@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\File;
-use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +26,7 @@ Route::controller(\App\Http\Controllers\PageController::class)->group(function (
 
 Route::post('service/comments', [\App\Http\Controllers\ServiceCommentController::class, 'store'])->name('add-comment');
 Route::post('service/{service:slug}/likes', [\App\Http\Controllers\LikeController::class, 'addLike'])->name('add-like');
-
+Route::post('submit-subscriber', [\App\Http\Controllers\PageController::class, 'addSubscriber'])->name('submit-subscriber');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::controller(\App\Http\Controllers\AdminServiceController::class)->group(function () {
@@ -75,6 +73,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::delete('delete-tag/{tag:id}', 'deleteTag')->name('delete-tag');
     });
 
+    Route::controller(\App\Http\Controllers\AdminSubscriberController::class)->group(function () {
+        Route::get('show-subscribers', 'showSubscribers')->name('show-subscribers');
+
+        Route::delete('delete-subscriber/{subscriber:id}', 'deleteSubscriber')->name('delete-subscriber');
+    });
+
 });
 
 Route::get('/email/verify', function () {
@@ -82,5 +86,14 @@ Route::get('/email/verify', function () {
 })->middleware('auth')->name('verification.notice');
 
 
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
+    Route::controller(\App\Http\Controllers\ProfileController::class)->group(function () {
+        Route::get('user-profile', 'editProfile')->name('edit-profile');
+        Route::post('user-profile-update', 'profileUpdate')->name('profile-update');
+        Route::get('reviewed-services', 'reviewedServices')->name('reviewed-services');
+        Route::get('favorite-services', 'favoriteServices')->name('favorite-services');
+        Route::get('commented-services', 'commentedServices')->name('commented-services');
+    });
+});
 
 

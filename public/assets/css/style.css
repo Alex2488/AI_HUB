@@ -2384,6 +2384,7 @@ button {
 
 .footer_section .about_content {
     padding-right: 50px;
+    margin-top: -15px;
 }
 
 .footer_section .brand_logo .brand_link {
@@ -3615,8 +3616,8 @@ button {
 }
 
 .feature_section .dot_image_1 {
-    top: 200px;
-    right: -88px;
+    top: 50%;
+    right: 15px;
     max-width: 158px;
 }
 
@@ -7694,7 +7695,7 @@ button {
 
 .job_item .item_icon {
     float: left;
-    width: 200px;
+    width: 130px;
     height: 80px;
     display: flex;
     margin-right: 40px;
@@ -20057,7 +20058,7 @@ button {
 
     .feature_section .dot_image_1 {
         top: 80px;
-        right: -60px;
+        right: 20px;
         max-width: 85px;
     }
 
@@ -21747,6 +21748,26 @@ button {
     box-shadow: 0px 10px 15px 0px rgba(38, 59, 94, 0.05);
 }
 
+
+#editor {
+    height: 350px;
+    border-radius: 0 0 45px 45px;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.ql-toolbar.ql-snow {
+    border-radius: 45px 45px 0 0;
+    padding-left: 37px !important;
+}
+
+.post_img {
+    max-height: 400px;
+    display: block;
+    margin: 0 auto;
+}
 
 
 

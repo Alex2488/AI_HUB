@@ -2,7 +2,7 @@
 
     <x-page.breadcrumb title="Редагувати сервіс">
         <li>
-{{--            <a href="{{route('show-services')}}">Сервіси</a>--}}
+            <a href="{{route('show-services')}}">Сервіси</a>
         </li>
     </x-page.breadcrumb>
 
@@ -95,18 +95,24 @@
                 img="{{$service->image}}">
             </x-form.input-image>
 
-            <x-form.input-text
+            <x-form.input-textarea
                 label="Короткий опис"
                 name="excerpt"
             >{{old('excerpt', $service->excerpt)}}
-            </x-form.input-text>
+            </x-form.input-textarea>
 
             <x-form.input-text
                 class="editor"
                 label="Повний опис"
                 name="main_content"
-            >{{old('main_content', $service->main_content)}}
+                :value="old('main_content')"
+            >
+                {{old('main_content', $service->main_content)}}
             </x-form.input-text>
+
+            <div id="editor" class="mb-4">
+                {!! isset($service->main_content) ? $service->main_content : '' !!}
+            </div>
 
             <x-form.input-dropdown
                 name="is_published"

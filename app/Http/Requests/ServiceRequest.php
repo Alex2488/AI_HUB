@@ -60,7 +60,7 @@ class ServiceRequest extends FormRequest
             'developer.required' => 'Не зазначено розробника',
             'developer.max' => "Назва розробника не може бути довше 255 символів",
             'is_published' => 'Невірний параметр',
-            'category_id' => 'Не вірно зазначена категорія сервісу',
+            'category_id' => 'Не вірно зазначено категорію сервісу',
         ];
     }
 

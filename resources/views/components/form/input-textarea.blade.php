@@ -1,12 +1,11 @@
 @props(['label', 'name', 'class' => ''])
 
-<div class="form_item m-0">
+<div class="form_item">
     <h6 class="ml-5">{{$label}}</h6>
 
-    <textarea type="textarea"
-              id="content-textarea"
-              style="display: none"
+    <textarea class="{{$class}}"
               name="{{$name}}"
+              placeholder="Введіть короткий опис"
                 {{ $attributes }}
     >{{ old($name) ?? $slot }}
     </textarea>
@@ -16,5 +15,3 @@
     >
     </x-page.error>
 </div>
-
-

@@ -56,6 +56,16 @@
                 Пости
             </a>
         </li>
+        <li>
+            <a class="btn-light px-3 py-2 rounded mr-2
+                @if(Route::is('show-blogs') )
+                    active
+                @endif
+            "
+               href="{{route('show-subscribers')}}" >
+                Підписники
+            </a>
+        </li>
 
     </ul>
 
@@ -82,6 +92,7 @@
                     Новий тег
                 </a>
             @endif
+
 
         </li>
     </ul>

@@ -18,8 +18,6 @@ class Service extends Model
 
     public function scopeFilter ($query, array $filters) {
 
-
-
         $query -> when($filters['search'] ?? false, fn ($query, $search) =>
             $query->where(fn($query)=>
                 $query
@@ -41,6 +39,14 @@ class Service extends Model
 
         );
 
+        $query -> when($filters['order'] ?? false, fn ($query, $order) =>
+            $query->whereHas('title', fn ($query) =>
+                $query->orders('title', 'desc'))
+
+        );
+
+//        dd($query);
+
     }
 
 
@@ -52,6 +58,10 @@ class Service extends Model
 
     public function comments (){
         return $this->hasMany(Comment::class);
+    }
+
+    public function views (){
+        return $this->hasMany(Service_view::class);
     }
 
     public function likedUsers() {

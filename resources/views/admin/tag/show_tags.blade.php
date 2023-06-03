@@ -10,10 +10,6 @@
         <div class="container">
 
             @include('admin.include.navbar')
-
-
-
-
             <div class="table_wrap border_bottom mb-50">
                 <table class="table m-0">
                     <thead>
@@ -27,10 +23,14 @@
                     </tr>
                     </thead>
                     <tbody>
-
+                    @if ($tags->count() === 0)
+                        <tr>
+                            <td class="text-center" colspan="3">
+                                <span class="text-center">Теги відсутні</span>
+                            </td>
+                        </tr>
+                    @else
                     @foreach ($tags as $tag)
-
-
                         <tr>
                             <td class="text-center">
                                 <div class="product_item clearfix">
@@ -69,7 +69,7 @@
                             </td>
                         </tr>
                     @endforeach
-
+                    @endif
                     </tbody>
                 </table>
             </div>

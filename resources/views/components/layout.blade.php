@@ -17,7 +17,7 @@
 
 <body class="home_software">
 
-<div class="body_wrap">
+
 
     <!-- backtotop - start -->
     <div id="thetop"></div>
@@ -77,38 +77,16 @@
 
                             @if (auth()->user())
                                 <li class="menu_item_has_child">
-                                    <a href="#">Вітаємо, {{auth()->user()->name}}</a>
-                                    <ul class="submenu">
-                                        <li><a href="gallery_fullimage_2_column.html">Grid (2 Column)</a></li>
-                                        <li><a href="gallery_fullimage_3_column.html">Grid (3 Column)</a></li>
-                                        <li><a href="gallery_fullimage_4_column.html">Grid (4 Column)</a></li>
-
-                                        <li><a href="gallery_fullimage_fullwidth_3_column.html">Full Width (3
-                                                Column)</a></li>
-                                        <li><a href="gallery_fullimage_fullwidth_4_column.html">Full Width (4
-                                                Column)</a></li>
-
-                                        <li><a href="gallery_fullimage_masonry_2_column.html">Masonry (2 Column)</a>
-                                        </li>
-                                        <li><a href="gallery_fullimage_masonry_3_column.html">Masonry (3 Column)</a>
-                                        </li>
-                                        <li><a href="gallery_fullimage_masonry_4_column.html">Masonry (4 Column)</a>
-                                        </li>
+                                    <a href="#">{{auth()->user()->name}} <span style="font-size: 10px">&#9660;</span></a>
+                                    <ul class="submenu rounded">
+                                        <li><a href="{{route('edit-profile')}}">Змінити данні</a></li>
+                                        <li><a href="{{route('favorite-services')}}">Улюблені сервіси</a></li>
+                                        <li><a href="{{route('commented-services')}}">Коментовані сервіси</a></li>
+                                        <li><a href="{{route('reviewed-services')}}">Переглянуті сервіси</a></li>
                                     </ul>
                                 </li>
                             @endif
 
-
-
-
-
-
-                            {{--                            @if (auth()->user()->role === 1)--}}
-
-
-
-
-                            {{--                            @endif--}}
                         </ul>
                     </nav>
                 </div>
@@ -224,7 +202,9 @@
     <x-flash/>
 
 
-</div>
+
+
+
 @include('include.footer')
 
 @include('include.script')

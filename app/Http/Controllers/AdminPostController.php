@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
-use App\Http\Requests\ServiceRequest;
-
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
