@@ -116,77 +116,59 @@
 
             <div class="brand_logo mb-50 clearfix">
                 <a href="index.html" class="brand_link">
-                    <img src="{{url('/')}}/assets/images/logo/logo_2.png" alt="logo_not_found">
+                    <img src="{{url('/')}}/assets/images/logo_ai.png" alt="logo_not_found">
                 </a>
                 <span class="close_btn"><i class="fal fa-times"></i></span>
             </div>
 
             <div class="about_content mb-50 clearfix">
                 <h3 class="item_title">
-                    We giving you a shiny future to your Business
+                    Каталог AI-сервисів
+
                 </h3>
                 <p class="mb-30">
-                    Why say old chap that is spiffin barney and nancy boys bleeder and chimne pot ichard cheers the
-                    little rotter so I said, easy peasy buggered blower
+                    Знайдіть найкращі інструменти зі штучним інтелектом для свого бізнесу
+                    українською.
                 </p>
+
+
+                <div id="menu_list" class="menu_list ul_li_block mp_balancing mb-50 clearfix">
+                    <ul class="clearfix">
+
+                        <li><a href="{{url('/')}}">Головна</a></li>
+                        <li><a href="{{route('services')}}">AI сервіси</a></li>
+                        <li><a href="{{route('posts')}}">Блог</a></li>
+                        <li><a href="{{route('about')}}">Про нас</a></li>
+                    </ul>
+                </div>
+
                 <div class="btns_group ul_li clearfix">
                     <ul class="clearfix">
-                        <li><a href="sign_up.html" class="btn bg_default_blue">Get Started</a></li>
-                        <li><a href="about.html" class="btn btn_border">Learn More <i
+                        <li><a href="{{route('register')}}" class="btn bg_default_blue">Зареєструватись</a></li>
+                        <li><a href="{{url('auth')}}" class="btn btn_border">Війти<i
                                     class="fal fa-long-arrow-right ml-1"></i></a></li>
                     </ul>
                 </div>
             </div>
 
-            <div id="menu_list" class="menu_list ul_li_block mp_balancing mb-50 clearfix">
-                <ul class="clearfix">
 
-                    <li><a href="{{url('/')}}">Головна</a></li>
-                    <li><a href="about.html">AI сервіси</a></li>
-                    <li><a href="about.html">Блог</a></li>
-                    <li><a href="about.html">Про нас</a></li>
-
-
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
 
             <div class="contact_info ul_li_block mb-50">
                 <h3 class="item_title">Contact Us</h3>
                 <ul class="clearfix">
                     <li><a href="#!"><span>Email:</span> makro@gmail.com</a></li>
-                    <li><a href="#!"><span>Phone:</span> +948 256 347 968</a></li>
                 </ul>
             </div>
 
-            <div class="social_links ul_li mb-50">
-                <h3 class="item_title">Follow Us</h3>
-                <ul class="clearfix">
-                    <li><a href="#!"><i class="icon-facebook"></i></a></li>
-                    <li><a href="#!"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#!"><i class="icon-vimeo"></i></a></li>
-                    <li><a href="#!"><i class="icon-linkedin"></i></a></li>
-                </ul>
-            </div>
-
-            <div class="app_content mb-80 clearfix">
-                <h2 class="item_title">support & downloads</h2>
-                <p class="mb-30">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text.
-                </p>
-
-            </div>
 
             <div class="copyright_text text-center mb-15">
                 <p class="mb-0">
-                    Copyright © 2020 Desing by <a href="https://droitthemes.com/" class="author_link">DroitThemes</a>
+                    Copyright © 2023 AI-HUB
                 </p>
             </div>
 
             <div class="footer_menu ul_li_center text-center">
                 <ul class="clearfix">
-                    <li><a href="#!">Terms of Use</a></li>
                     <li><a href="#!">Privacy Policy</a></li>
                 </ul>
             </div>
