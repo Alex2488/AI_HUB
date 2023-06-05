@@ -65,27 +65,7 @@
     });
 </script>
 
-<script>
-    const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-const slides = document.querySelector('.slides');
 
-let currentIndex = 0;
-
-nextButton.addEventListener('click', () => {
-if (currentIndex < 2) {
-currentIndex++;
-slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-});
-
-prevButton.addEventListener('click', () => {
-if (currentIndex > 0) {
-currentIndex--;
-slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-});
-</script>
 
 <script src="https://cdn.tiny.cloud/1/ubajajo51x9elxdo5umbj91pne7ub7gigp3u4h844ke8qt2i/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
