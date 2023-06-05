@@ -40,7 +40,7 @@ class AdminTagController extends Controller
         return view('admin.tag.edit-tag', compact('tag'));
     }
 
-    public function updateTag($id, ServiceTagRequest $request)
+    public function updateTag($id, TagRequest $request)
     {
         $tag = Tag::find($id);
         $tag->name = $request->input('name');
