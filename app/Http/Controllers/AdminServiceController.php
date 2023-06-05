@@ -75,13 +75,13 @@ class AdminServiceController extends Controller
 
         if ($request->logo) {
             $logoImage = $request->logo;
-            $logoPath = Storage::put("/public/image", $logoImage);
+            $logoPath = Storage::put("", $logoImage);
             $service->logo = $logoPath;
         }
 
         if ($request->image) {
             $image = $request->image;
-            $imagePath = Storage::put("/public/image", $image);
+            $imagePath = Storage::put("", $image);
             $service->image = $imagePath;
         }
 
