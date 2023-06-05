@@ -79,7 +79,7 @@
     </x-page.main-admin>
     <!-- contact_section - end
     ================================================== -->
-
+    @include('admin.include.quill')
 </x-layout>
 
 

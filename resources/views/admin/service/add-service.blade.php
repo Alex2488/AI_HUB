@@ -136,6 +136,7 @@
             </x-form.buttons-container>
         </form>
     </x-page.main-admin>
+    @include('admin.include.quill')
 </x-layout>
 
 
