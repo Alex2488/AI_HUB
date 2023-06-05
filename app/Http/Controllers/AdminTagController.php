@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\Requests\tagRequest;
+use App\Http\Requests\TagRequest;
 use App\Models\Tag;
 use Illuminate\Support\Str;
 
