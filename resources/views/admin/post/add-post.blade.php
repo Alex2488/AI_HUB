@@ -80,7 +80,7 @@
         </form>
     </x-page.main-admin>
 
-
+    @include('admin.include.quill')
 </x-layout>
 
 
