@@ -35,7 +35,7 @@
             <div class="filter_bar mb-4 clearfix">
                 <div class="d-flex justify-content-between">
                     <h2 class="title_text mb-0">Пошук AI сервісу</h2>
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    {{--<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                         <div class="btns_group ul_li_right">
                             <ul class="clearfix">
                                 <li><span>Сортувати за</span></li>
@@ -58,7 +58,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
 

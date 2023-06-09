@@ -147,13 +147,13 @@
 										</span>
                         </div>
                         <h3 class="item_title">
-                            <a href="{{url('allDataServices')}}">Найкращі сервіси</a>
+                            <a href="{{url('services')}}">Найкращі сервіси</a>
                         </h3>
                         <p class="mb-50">
                             Завдяки рейтинговій системі сервісів, ви зможете знайти для себе найкращі сервіси, порівняти
                             і вибрати найбільш оптимальні за лічені хвилини
                         </p>
-                        <a href="case_study_details.html" class="details_btn"><i
+                        <a href="{{url('services')}}" class="details_btn"><i
                                 class="icon-arrow-right-style-1"></i></a>
                     </div>
                 </div>
@@ -178,13 +178,13 @@
 										</span>
                         </div>
                         <h3 class="item_title">
-                            <a href="{{url('news')}}">Завжди в курсі подій</a>
+                            <a href="{{url('blog')}}">Завжди в курсі подій</a>
                         </h3>
                         <p class="mb-50">
                             На нашому сайті ви отримуєте корисну інформацію про останні досягнення та дослідження,
                             новинки та тренди у світі штучного інтелекту
                         </p>
-                        <a href="{{url('news')}}" class="details_btn"><i class="icon-arrow-right-style-1"></i></a>
+                        <a href="{{url('blog')}}" class="details_btn"><i class="icon-arrow-right-style-1"></i></a>
                     </div>
                 </div>
 

@@ -83,6 +83,11 @@ class PageController extends Controller
         return view('about');
     }
 
+    public function showPrivacy()
+    {
+        return view('privacy');
+    }
+
     public function showPosts()
     {
 

@@ -1,6 +1,6 @@
 <!-- newsletter_section - start
 				================================================== -->
-<section id="newsletter_section" class="newsletter_section text-white clearfix">
+<section id="newsletter_section" class="newsletter_section text-white clearfix mt-5">
     <div class="container">
         <div class="newsletter_boxed p-60 bg_gradient_blue deco_wrap" data-aos="fade-up" data-aos-delay="100">
 

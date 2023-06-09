@@ -23,9 +23,8 @@
 <script src="{{url('/')}}/assets/js/parallax-scroll.js"></script>
 <script src="{{url('/')}}/assets/js/aos.js"></script>
 
-{{--<!-- google map - jquery include -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhrdEzlfpnsnfq4MgU1e1CCsrvVx2d59s"></script>
-<script src="{{url('/')}}/assets/js/gmaps.js"></script>--}}
+<!-- cookie -->
+<script src="{{url('/')}}/assets/js/cookie-notice.min.js"></script>
 
 <!-- mobile menu - jquery include -->
 <script src="{{url('/')}}/assets/js/mCustomScrollbar.js"></script>

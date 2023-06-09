@@ -20,6 +20,7 @@ Route::controller(\App\Http\Controllers\PageController::class)->group(function (
     Route::get('posts/{post:slug}', 'showPost')->name('show-post');
     Route::get('news', 'showNews')->name('news');
     Route::get('about', 'showAbout')->name('about');
+    Route::get('privacy', 'showPrivacy')->name('privacy');
 });
 
 

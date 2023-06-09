@@ -6,13 +6,24 @@
 
                 <div class="col-lg-4 col-md-4 col-sm-4 text-center">
                     <div class="widget about_content pr-0">
-                        <div class="brand_logo mb-30">
-                            <a href="index.html" class="brand_link">
-                                <img src="{{url('/')}}/assets/images/logo_ai_w.png" alt="logo_not_found">
-                            </a>
+                        <div class="copyright_text">
+                            <div class="brand_logo mb-30">
+                                <a href="index.html" class="brand_link">
+                                    <img src="{{url('/')}}/assets/images/logo_ai_w.png" alt="logo_not_found">
+                                </a>
+                            </div>
+
                         </div>
                         <div class="copyright_text">
-                            <p class="mb-0">
+                            <p class="mb-3">
+                                aihub.ukraine@gmail.com
+                            </p>
+                        </div>
+                        <div class="copyright_text">
+                            <p class="mb-3">
+                                <a href="{{url('privacy')}}">Політика приватності</a>
+                            </p>
+                            <p class="mb-3">
                                 Copyright AI-HUB © 2023
                             </p>
                         </div>
@@ -21,7 +32,7 @@
 
                 <div class="col-lg-4 col-md-4 col-sm-4 text-center">
                     <div class="widget useful_links ul_li_block mt-0 mb-4">
-                        <h3 class="widget_title mb-50">AI-HUB</h3>
+                        <h3 class="widget_title mb-50">AI-Сервіси</h3>
                         <ul class="clearfix">
                             <li><a href="{{url('/')}}">Головна</a></li>
                             <li><a href="{{route('services')}}">AI сервіси</a></li>

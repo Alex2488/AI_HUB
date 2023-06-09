@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
     <title>AI HUB</title>
 
     @include('include.style')
@@ -35,7 +36,7 @@
             <div class="row align-items-center">
 
                 <div class="col-lg-2">
-                    <div class="brand_logo">
+                    <div class="brand_logo d-flex justify-content-between">
                         <a href="{{url('/')}}" class="brand_link">
                             <img src="{{url('/')}}/assets/images/logo_ai_w.png" alt="logo_not_found">
                             <img src="{{url('/')}}/assets/images/logo_ai.png" alt="logo_not_found">
@@ -154,9 +155,8 @@
 
 
             <div class="contact_info ul_li_block mb-50">
-                <h3 class="item_title">Contact Us</h3>
                 <ul class="clearfix">
-                    <li><a href="#!"><span>Email:</span> makro@gmail.com</a></li>
+                    <li><a href="#!"><span>Email:</span>aihub.ukraine@gmail.com</a></li>
                 </ul>
             </div>
 
@@ -169,7 +169,7 @@
 
             <div class="footer_menu ul_li_center text-center">
                 <ul class="clearfix">
-                    <li><a href="#!">Privacy Policy</a></li>
+                    <li><a href="{{url('privacy')}}">Політика приватності</a></li>
                 </ul>
             </div>
 

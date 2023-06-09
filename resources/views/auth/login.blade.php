@@ -29,7 +29,7 @@
 
                 <div class="col-lg-6 col-md-7 order-last">
                     <div class="signin_image" data-aos="fade-up" data-aos-delay="300">
-                        <img src="assets/images/register/img_1.png" alt="image_not_found">
+                        <img src="{{url('/')}}/assets/images/ai_auth2.jpg" alt="image_not_found">
                     </div>
                 </div>
 

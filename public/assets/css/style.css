@@ -18369,7 +18369,7 @@ button {
     /* sidebar section - start */
     .sidebar_section {
         max-width: 370px;
-        margin: 50px auto 0px;
+        margin: 0px auto 0px;
     }
 
     /* sidebar section - end */
@@ -18887,6 +18887,10 @@ button {
         width: 100%;
         padding: 0px;
         display: table;
+    }
+
+    .job_item .btns_group {
+        order: 1;
     }
 
     /* job page - end */
@@ -21684,7 +21688,7 @@ button {
 }
 
 .job_item .item_icon > img {
-    height: 80px;
+    height: 90px;
 }
 
 .item_icon {
