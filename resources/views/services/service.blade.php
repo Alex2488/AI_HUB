@@ -34,12 +34,8 @@
                                     </div>
                                     <div class="row align-items-center my-4">
                                         <h6 class="widget_title mb-0">Посилання на сайт:</h6>
-                                        <a href="{{$service->link_to_service}}"
+                                        <a href="{{$service->link_to_service}}" target="_blank"
                                            class="ml-2">{{$service->link_to_service}}</a>
-                                    </div>
-                                    <div class="row align-items-center my-4">
-                                        <h6 class="widget_title mb-0">Переглядів:</h6>
-                                        <p class="ml-2">{{$service->views()->count()}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +130,7 @@
                             </div>
                             <div class="btns_group ul_li clearfix">
                                 <ul class="clearfix">
-                                    <li><a href="{{$service->link_to_service}}"
+                                    <li><a href="{{$service->link_to_service}}" target="_blank"
                                            class="btn bg_default_blue">Спробувати</a></li>
                                     <li>
                                         @include('components.service-like')

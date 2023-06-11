@@ -139,6 +139,11 @@
                         <li><a href="{{route('services')}}">AI сервіси</a></li>
                         <li><a href="{{route('posts')}}">Блог</a></li>
                         <li><a href="{{route('about')}}">Про нас</a></li>
+                        @if (auth()->user()?->role === 1)
+                            <li>
+                                <a href="{{route('show-services')}}">admin</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
 

@@ -20,6 +20,7 @@
                         <th class="text-center">Теги</th>
                         <th class="text-center">Лайки</th>
                         <th class="text-center">Коментарі</th>
+                        <th class="text-center">Перегляди</th>
                         <th class="text-center">Публікація</th>
                         <th class="text-center">Редагувати</th>
                         <th class="text-center">Видалити</th>
@@ -69,6 +70,9 @@
                                 </td>
                                 <td class="text-center">
                                     <span class="text-center">{{$service->comments->count()}}</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="text-center">{{$service->views()->count()}}</span>
                                 </td>
                                 <td class="text-center">
 
