@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <title>AI HUB</title>
+    <title>AI HUB - найкращі інструменти зі штучним інтелектом українською</title>
 
     @include('include.style')
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
