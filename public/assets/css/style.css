@@ -21701,7 +21701,7 @@ button {
 }
 
 .job_item .item_icon > img {
-    height: 90px;
+    max-height: 90px;
 }
 
 .item_icon {
