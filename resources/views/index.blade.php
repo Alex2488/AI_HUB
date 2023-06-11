@@ -178,13 +178,13 @@
 										</span>
                         </div>
                         <h3 class="item_title">
-                            <a href="{{url('blog')}}">Завжди в курсі подій</a>
+                            <a href="{{url('posts')}}">Завжди в курсі подій</a>
                         </h3>
                         <p class="mb-50">
                             На нашому сайті ви отримуєте корисну інформацію про останні досягнення та дослідження,
                             новинки та тренди у світі штучного інтелекту
                         </p>
-                        <a href="{{url('blog')}}" class="details_btn"><i class="icon-arrow-right-style-1"></i></a>
+                        <a href="{{url('posts')}}" class="details_btn"><i class="icon-arrow-right-style-1"></i></a>
                     </div>
                 </div>
 
@@ -258,9 +258,7 @@
 
                         <div class="col-lg-5 col-md-6 col-sm-8">
                             <div class="section_title ml--30">
-										<span class="icon icon_yellow mb-30">
-											<i class="icon-avatar"></i>
-										</span>
+
                                 <h2 class="title_text mb-30 text_effect_wrap">
                                     <span class="text_effect text_effect_left">{{$post->title}}</span>
                                 </h2>

@@ -40,7 +40,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     });
 
     Route::controller(\App\Http\Controllers\AdminPostController::class)->group(function () {
-        Route::get('posts', 'index')->name('show-posts');
+        Route::get('show-posts', 'index')->name('show-posts');
         Route::get('add-post', 'create')->name('add-post');
         Route::post('add-post/submit-post', 'store')->name('submit-post');
         Route::get('posts/{post:slug}/edit', 'edit')->name('edit-post');

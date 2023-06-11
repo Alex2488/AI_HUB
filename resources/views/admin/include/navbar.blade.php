@@ -1,68 +1,39 @@
-
-
-
-
-
-
-
-
-
-
-<div class="button-group filter-btns-group ul_li mb-30 d-flex justify-content-between" data-aos="fade-up" data-aos-delay="200">
+<div class="button-group filter-btns-group ul_li mb-30 d-flex justify-content-between" data-aos="fade-up"
+     data-aos-delay="200">
     <ul id="admin-buttons" class="clearfix">
-        <li >
-            <a class="btn-light px-3 py-2 rounded  mr-2
-                @if(Route::is('show-services') )active
-                @endif"
-               href="{{route('show-services')}}" >
+        <li>
+            <a class="btn-light px-3 py-2 rounded mr-2 {{(Route::is('show-services')) ? 'active' : ''}} "
+               href="{{route('show-services')}}">
                 Сервіси
             </a>
         </li>
         <li>
-            <a class="btn-light px-3 py-2 rounded mr-2
-                @if(Route::is('show-users') )active
-                @endif"
-               href="{{route('show-users')}}" >
+            <a class="btn-light px-3 py-2 rounded mr-2 {{(Route::is('show-users')) ? 'active' : ''}}"
+               href="{{route('show-users')}}">
                 Користувачі
             </a>
         </li>
         <li>
-            <a class="btn-light px-3 py-2 rounded mr-2
-                @if(Route::is('show-categories') )
-                    active
-                @endif
-            "
-               href="{{route('show-categories')}}" >
+            <a class="btn-light px-3 py-2 rounded mr-2 {{(Route::is('show-categories')) ? 'active' : ''}}"
+               href="{{route('show-categories')}}">
                 Категорії
             </a>
         </li>
         <li>
-            <a class="btn-light px-3 py-2 rounded mr-2
-                @if(Route::is('show-tags') )
-                    active
-                @endif
-            "
-               href="{{route('show-tags')}}" >
+            <a class="btn-light px-3 py-2 rounded mr-2 {{(Route::is('show-tags')) ? 'active' : ''}}"
+               href="{{route('show-tags')}}">
                 Теги
             </a>
         </li>
         <li>
-            <a class="btn-light px-3 py-2 rounded mr-2
-                @if(Route::is('show-blogs') )
-                    active
-                @endif
-            "
-               href="{{route('show-posts')}}" >
+            <a class="btn-light px-3 py-2 rounded mr-2 {{(Route::is('show-posts')) ? 'active' : ''}}"
+               href="{{route('show-posts')}}">
                 Пости
             </a>
         </li>
         <li>
-            <a class="btn-light px-3 py-2 rounded mr-2
-                @if(Route::is('show-blogs') )
-                    active
-                @endif
-            "
-               href="{{route('show-subscribers')}}" >
+            <a class="btn-light px-3 py-2 rounded mr-2 {{(Route::is('show-subscribers')) ? 'active' : ''}}"
+               href="{{route('show-subscribers')}}">
                 Підписники
             </a>
         </li>

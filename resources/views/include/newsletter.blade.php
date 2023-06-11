@@ -7,7 +7,7 @@
             <div class="row align-items-center justify-content-lg-between justify-content-md-center">
                 <div class="col-lg-5 col-md-7">
                     <div class="section_title decrease_size text-center">
-                        <h2 class="title_text mb-15">Підписатись</h2>
+                        <h2 class="title_text mb-15">Підпишись</h2>
                         <p class="mb-0">
                             на новини від AI-HUB<span class="d-block">та скористайся новими інструментами першим.</span>
                         </p>

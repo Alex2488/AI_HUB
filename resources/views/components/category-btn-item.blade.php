@@ -4,6 +4,8 @@
     $classes = 'category-btn rounded p-2';
 
     if ($active) $classes .= ' active';
+
+
 @endphp
 
 <li>

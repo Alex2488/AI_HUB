@@ -62,6 +62,7 @@
                 </div>
             </div>
 
+
             <div class="sidebar_section mb-4">
                 <div class="widget sidebar_search form_item" data-aos="fade-up" data-aos-delay="300">
                     {{--                    {{dd(request())}}--}}
@@ -91,7 +92,8 @@
                     <x-category-btn-item
                         href="{{route('services') . '/?category=' . $category->slug}}"
 
-                        active="{{request()->is('/?category=' . $category->slug)}}"
+                        active="{{(request()->is('/?category=' . $category->slug))? 'active' : ''}}"
+
                     >
                         {{$category->name}}
                     </x-category-btn-item>

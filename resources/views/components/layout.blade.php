@@ -50,21 +50,20 @@
                 <div class="col-lg-8">
                     <nav class="main_menu ul_li_right clearfix">
                         <ul class="clearfix">
-                            <li class="active menu_item_has_child">
-                                <a href="{{url('/')}}">Головна</a>
+                            <li class="menu_item_has_child {{(Route::is('home')) ? 'active' : ''}}">
+                                <a href="{{route('home')}}">Головна</a>
                             </li>
 
-                            <li class="menu_item_has_child">
+                            <li class="menu_item_has_child {{(Route::is('services')) ? 'active' : ''}} ">
                                 <a href="{{route('services')}}">AI сервіси</a>
                             </li>
 
 
-                            <li class="menu_item_has_child">
+                            <li class="menu_item_has_child {{(Route::is('posts')) ? 'active' : ''}}">
                                 <a href="{{url('posts')}}">Блог</a>
-
                             </li>
 
-                            <li class="menu_item_has_child">
+                            <li class="menu_item_has_child {{(Route::is('about')) ? 'active' : ''}}">
                                 <a href="{{url('about')}}">Про нас</a>
                             </li>
 
