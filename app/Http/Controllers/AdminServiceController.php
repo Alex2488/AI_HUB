@@ -15,7 +15,7 @@ class AdminServiceController extends Controller
 
     public function index()
     {
-        $services = Service::all();
+        $services = Service::all()->sortBy('title');
         $categories = Category::all();
         $tags = Tag::all();
         return view('admin.service.show_services', compact('services', 'categories', 'tags'));
@@ -24,7 +24,7 @@ class AdminServiceController extends Controller
 
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::all()->sortBy('name');
         $tags = Tag::all()->sortBy('name');
 
         return view('admin.service.add-service', compact('categories', 'tags'));

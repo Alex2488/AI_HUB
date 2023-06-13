@@ -10,7 +10,7 @@
                         <div class="big_image">
                             <div class="layer" data-depth="0.2">
                                 <div data-aos="fade-up" data-aos-delay="300">
-                                    <img src="{{url('/')}}/assets/images/robot-main-3-bg.png" alt="image_not_found">
+                                    <img src="{{url('/')}}/assets/images/robot-main-3-bg-min.png" alt="image_not_found">
                                 </div>
                             </div>
                         </div>

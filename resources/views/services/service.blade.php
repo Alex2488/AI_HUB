@@ -48,7 +48,7 @@
                                                 <div class="post_date">
                                                     <span>{{$service_alt->category->name}}</span>
                                                 </div>
-                                                <a href="#!" class="item">
+                                                <a href="{{$service_alt->slug}}" class="item">
                                                     <img src="{{ url('/') . Storage::url($service_alt->logo) }}">
                                                 </a>
                                                 <div class="item_content">
