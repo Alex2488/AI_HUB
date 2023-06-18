@@ -44,15 +44,13 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-around m-0">
-                <span class="col-12 col-md-6 text-center">
-                    <a href="{{url('privacy')}}">Політика приватності</a>
-                </span>
-                <span class="col-12 col-md-6 pr-5 text-center">
-                    Copyright AI-HUB © 2023
-                </span>
+        </div>
+        <div class="copyright_text d-flex justify-content-around m-0">
+                <a href="{{url('privacy')}}">Політика приватності</a>
 
-            </div>
+            <p class="text-left">
+                Copyright AI-HUB © 2023
+            </p>
 
         </div>
     </div>

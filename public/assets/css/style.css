@@ -7632,6 +7632,8 @@ button {
 ==================================================================================================== */
 /* job section setting - start
 ================================================== */
+
+
 .job_section.bg_gray {
     background-color: #fbfbfd;
 }
@@ -7651,6 +7653,7 @@ button {
     height: 45px;
     margin-right: 10px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .job_section .button-group > ul > li:last-child {
@@ -7706,7 +7709,7 @@ button {
 
 .job_item .item_icon > img {
     margin: auto;
-    height: 50px;
+    height: auto;
 }
 
 .job_item .item_content {
@@ -7752,6 +7755,10 @@ button {
     left: 0px;
     width: 100%;
     right: auto;
+}
+
+.job_section .btns_group {
+
 }
 
 /* job item - end
@@ -15771,6 +15778,7 @@ button {
 
     .footer_section .copyright_text {
         margin-bottom: 15px;
+        font-size: 12px;
     }
 
     .footer_section .footer_menu > ul {
@@ -21790,6 +21798,32 @@ button {
 
 
 
+
+
+
+@media screen and (max-width: 576px) {
+
+
+
+.job_item_container  {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.job_item .item_icon {
+    border: none;
+    margin: 0 auto;
+}
+
+.job_section .btns_group {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+}
+
+
+}
 
 
 
