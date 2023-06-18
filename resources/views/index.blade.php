@@ -19,7 +19,7 @@
 
                 <div class="col-lg-7">
                     <div class="banner_content c_slide_in">
-                        <h1 class="title_text mb-30 text_effect_wrap c_slide_in_wrap1">
+                        <h1 class="title_text mb-30 text_effect_wrap c_slide_in_wrap1 justify-content-center">
                                             <span class="c_slide_in_wrap2">
                                                 <span class="c_slide_in_wrap3">
                                                     Вас вітає AI HUB
