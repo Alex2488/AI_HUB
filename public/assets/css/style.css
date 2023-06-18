@@ -21821,7 +21821,9 @@ button {
     top: 50px;
     right: 20px;
 }
-
+#job_section {
+    margin-bottom: 100px;
+}
 
 }
 
