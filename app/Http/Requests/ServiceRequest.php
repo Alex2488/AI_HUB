@@ -8,6 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\File;
 
 class ServiceRequest extends FormRequest
 {
@@ -33,8 +34,12 @@ class ServiceRequest extends FormRequest
             'slug' =>  (Route::is('submit-service')) ? ['string', 'max:255'] : ['string', 'max:255', 'required'],
             'link_to_service' => 'required|string|max:255',
             'excerpt' => 'required|max:140',
-            'logo' => Route::is('submit-service') ? ['required','image', 'size:20000'] : ['image'],
-            'image' => Route::is('submit-service') ? ['required','image', 'size:20000'] : ['image'],
+            'logo' => Route::is('submit-service') ?
+                ['required','image', File::image()->max(2000)] :
+                ['image', File::image()->max(2000)],
+            'image' => Route::is('submit-service') ?
+                ['required','image', File::image()->max(2000)] :
+                ['image',File::image()->max(2000)],
             'main_content' => 'required',
             'developer' => 'required|string|max:255',
             'is_published' => 'required|numeric|max:1',
@@ -55,9 +60,9 @@ class ServiceRequest extends FormRequest
             'link_to_service.max' => "Посилання не сервіс не може бути довше 255 символів",
             'excerpt.required' => "Не зазначено короткий опис",
             'logo.required' => "Логотип не завантажено",
-            'logo.size' => "Логотип ,більше 2 Mb",
+            'logo.size' => "Логотип більше 2 Mb",
             'image.required' => "Зображення не завантажено",
-            'image.size' => "Логотип ,більше 2 Mb",
+            'image.size' => "Зображення більше 2 Mb",
             'main_content' => 'Не зазначено опис сервісу',
             'developer.required' => 'Не зазначено розробника',
             'developer.max' => "Назва розробника не може бути довше 255 символів",
