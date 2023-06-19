@@ -7233,7 +7233,6 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     justify-content: space-between !important
 }
 
-.justify-content-around {
     -ms-flex-pack: distribute !important;
     justify-content: space-around !important
 }

@@ -10,6 +10,18 @@
             @include('admin.include.navbar')
 
             <div class="table_wrap border_bottom mb-50">
+                <div class="d-flex mb-3">
+                    <div class="bg-primary text-white m-1 p-2 rounded">
+                        Зареєстровано за сьогодні: {{$usersToday->count()}}
+                    </div>
+                    <div class="bg-primary text-white m-1 p-2 rounded">
+                        Зареєстровано за місяць: {{$usersCurrentMonth->count()}}
+                    </div>
+                    <div class="bg-primary text-white p-2 my-1 mr-1 ml-0 rounded">
+                        Всього користувачів: {{$users->count()}}
+                    </div>
+                </div>
+
                 <table class="table m-0">
                     <thead>
                     <tr>

@@ -6,6 +6,7 @@ use App\Http\Requests\ServiceRequest;
 use App\Models\Category;
 use App\Models\Service;
 use App\Models\Tag;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -16,9 +17,12 @@ class AdminServiceController extends Controller
     public function index()
     {
         $services = Service::all()->sortBy('title');
+        $servicesToday = Service::whereDate('created_at', Carbon::today())->get();
+        $servicesCurrentMonth = Service::whereYear('created_at', Carbon::now()->year)
+            ->whereMonth('created_at', Carbon::now()->month);
         $categories = Category::all();
         $tags = Tag::all();
-        return view('admin.service.show_services', compact('services', 'categories', 'tags'));
+        return view('admin.service.show_services', compact('services', 'categories', 'tags', 'servicesToday', 'servicesCurrentMonth'));
     }
 
 

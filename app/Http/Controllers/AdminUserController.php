@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\Models\User;
+use Carbon\Carbon;
 
 class AdminUserController extends Controller
 {
     public function index () {
         $users = User::all();
-        return view('admin.user.show_users', compact('users'));
+        $usersToday = User::whereDate('created_at', Carbon::today())->get();
+        $usersCurrentMonth = User::whereYear('created_at', Carbon::now()->year)
+            ->whereMonth('created_at', Carbon::now()->month);
+        return view('admin.user.show_users', compact('users', 'usersToday', 'usersCurrentMonth'));
     }
 
     public function edit ($id) {

@@ -1,4 +1,4 @@
-<div class="button-group filter-btns-group ul_li mb-30 d-flex justify-content-between" data-aos="fade-up"
+<div class="button-group filter-btns-group ul_li mb-3 d-flex justify-content-between" data-aos="fade-up"
      data-aos-delay="200">
     <ul id="admin-buttons" class="clearfix">
         <li>
@@ -45,10 +45,6 @@
             @if(Route::is('show-services'))
                 <a href="{{route('add-service')}}" class="btn-primary px-3 py-2 rounded mr-2">
                     Новий сервіс
-                </a>
-            @elseif(Route::is('show-users'))
-                <a href="{{route('add-service')}}" class="btn-primary px-3 py-2 rounded mr-2">
-                    Новий користувач
                 </a>
             @elseif(Route::is('show-categories'))
                 <a href="{{route('add-category')}}" class="btn-primary px-3 py-2 rounded mr-2">

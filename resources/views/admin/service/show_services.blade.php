@@ -11,7 +11,19 @@
             @include('admin.include.navbar')
 
 
-            <div class="table_wrap border_bottom mb-50">
+            <div class="table_wrap border_bottom mb-50 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                <div class="d-flex mb-3">
+                    <div class="bg-primary text-white m-1 p-2 rounded">
+                        Додано за сьогодні: {{$servicesToday->count()}}
+                    </div>
+                    <div class="bg-primary text-white m-1 p-2 rounded">
+                        Додано за місяць: {{$servicesCurrentMonth->count()}}
+                    </div>
+                    <div class="bg-primary text-white p-2 my-1 mr-1 ml-0 rounded">
+                        Всього сервісів: {{$services->count()}}
+                    </div>
+                </div>
+
                 <table class="table m-0">
                     <thead>
                     <tr>
@@ -22,6 +34,7 @@
                         <th class="text-center">Коментарі</th>
                         <th class="text-center">Перегляди</th>
                         <th class="text-center">Публікація</th>
+                        <th class="text-center">Дата</th>
                         <th class="text-center">Редагувати</th>
                         <th class="text-center">Видалити</th>
                     </tr>
@@ -77,6 +90,10 @@
                                 <td class="text-center">
 
                                     <span class="text-center">{{($service->is_published) ? 'так' : 'ні'}}</span>
+                                </td>
+                                <td class="text-center">
+
+                                    <span class="text-center">{{$service->created_at->toDateString()}}</span>
                                 </td>
                                 <td class="text-center">
 
