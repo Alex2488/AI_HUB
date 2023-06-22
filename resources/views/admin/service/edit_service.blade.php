@@ -8,7 +8,9 @@
 
     <!-- contact_section - start
 				================================================== -->
-    <x-page.main-admin title="Редагувати сервіс!!! {{$service->title}} ">
+    <x-page.main-admin
+        title="{{$service->title}}"
+        slug="{{$service->slug}}">
 
         <form action="{{ route('update-service', $service->id )}}" method="POST" enctype="multipart/form-data">
 

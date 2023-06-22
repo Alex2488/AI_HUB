@@ -19,7 +19,7 @@
 
                 <div class="col-lg-7">
                     <div class="banner_content c_slide_in">
-                        <h1 class="title_text mb-30 text_effect_wrap c_slide_in_wrap1 justify-content-center">
+                        <h1 class="title_text mb-30 text_effect_wrap c_slide_in_wrap1 justify-content-center justify-content-lg-start">
                                             <span class="c_slide_in_wrap2">
                                                 <span class="c_slide_in_wrap3">
                                                     Вас вітає AI HUB
@@ -27,8 +27,9 @@
                                             </span>
                         </h1>
                         <p class="mb-50" data-aos="fade-up" data-aos-delay="200">
-                            Каталог AI-сервисів: знайдіть найкращі інструменти зі штучним інтелектом для свого бізнесу
-                            українською.
+                            Український каталог AI-сервисів.
+                            <br>
+                            Знайдіть потрібні рішення в одному місці!
                         </p>
                         <div class="btns_group ul_li" data-aos="fade-up" data-aos-delay="300">
                             <ul class="clearfix">
