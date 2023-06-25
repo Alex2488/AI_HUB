@@ -56,7 +56,7 @@
                         <div class="col-lg-7 col-md-7">
                             <div class="signup_form">
                                 <h2 class="title_text">Реєстрація на сайті</h2>
-                                <form method="post" action="{{route('submit-user')}}">
+                                <form method="post" action="{{route('register')}}">
                                     @csrf
                                     <div class="form_item">
                                         <h4 class="input_title">Ваше ім'я</h4>
