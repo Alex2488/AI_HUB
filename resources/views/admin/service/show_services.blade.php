@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="d-flex mb-3">
-                    <a href="{{route('reports')}}" class="btn-primary px-3 py-2 rounded mr-2">
+                    <a href="#" class="btn-primary px-3 py-2 rounded mr-2">
                         Детальніше
                     </a>
                 </div>
