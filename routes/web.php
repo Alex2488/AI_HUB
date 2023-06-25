@@ -80,6 +80,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::delete('delete-subscriber/{subscriber:id}', 'deleteSubscriber')->name('delete-subscriber');
     });
 
+    Route::controller(\App\Http\Controllers\ReportController::class)->group(function () {
+        Route::get('reports', 'index')->name('reports');
+
+        Route::delete('delete-subscriber/{subscriber:id}', 'deleteSubscriber')->name('delete-subscriber');
+    });
+
 });
 
 Route::get('/email/verify', function () {
